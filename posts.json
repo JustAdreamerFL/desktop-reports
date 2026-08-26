@@ -1,0 +1,16 @@
+[
+  {
+    "slug": "gnome-51-whats-new",
+    "title": "GNOME 51 “A Coruña”: what actually changed since GNOME 50",
+    "description": "Alpha and beta are out, the final release lands September 16. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.",
+    "pubDate": "2026-08-26T00:00:00.000Z",
+    "tags": [
+      "gnome",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "GNOME",
+    "version": "51"
+  }
+]

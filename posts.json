@@ -1,5 +1,19 @@
 [
   {
+    "slug": "ubuntu-26-04-1",
+    "title": "Ubuntu 26.04.1 LTS: what the first point release actually fixes",
+    "description": "Resolute Raccoon's first point release shipped on August 27 with refreshed ISOs, a stack of desktop and kernel fixes, and security updates through August 25. No new HWE stack, that waits for 26.04.2.",
+    "pubDate": "2026-08-29T00:00:00.000Z",
+    "tags": [
+      "ubuntu",
+      "distro",
+      "lts",
+      "release-notes"
+    ],
+    "distro": "Ubuntu",
+    "version": "26.04.1"
+  },
+  {
     "slug": "gnome-51-whats-new",
     "title": "GNOME 51 “A Coruña”: what actually changed since GNOME 50",
     "description": "Alpha and beta are out, the final release lands September 16. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.",

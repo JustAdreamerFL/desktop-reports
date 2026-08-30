@@ -16,7 +16,7 @@
   {
     "slug": "plasma-68-freeze",
     "title": "KDE Plasma 6.8 freeze: what is already locked in",
-    "description": "Feature freeze landed August 27, 2026. Plasma 6.8 branches from there, two betas follow, and the final release is due October 14. Here is what is settled so far, sorted into the sections you can read.",
+    "description": "Soft feature freeze landed August 27, 2026. Plasma 6.8 branches from there, two betas follow, and the final release is due October 14. Here is what is settled so far, sorted into the sections you can read.",
     "pubDate": "2026-08-28T00:00:00.000Z",
     "tags": [
       "plasma",

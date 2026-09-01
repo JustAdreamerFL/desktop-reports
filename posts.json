@@ -1,5 +1,18 @@
 [
   {
+    "slug": "arch-2026-09-01",
+    "title": "Arch Linux 2026.09.01: the September ISO in plain language",
+    "description": "First Arch ISO to ship with Linux 7.2.2. GCC 16.2.1, glibc 2.44, Python 3.14.7, mkinitcpio 41.1, NVIDIA 610.57.04, COSMIC 1.7, and KDE Plasma 6.7.4 land in the same snapshot.",
+    "pubDate": "2026-09-02T00:00:00.000Z",
+    "tags": [
+      "arch",
+      "distro",
+      "release-notes"
+    ],
+    "distro": "Arch Linux",
+    "version": "2026.09.01"
+  },
+  {
     "slug": "ubuntu-26-04-1",
     "title": "Ubuntu 26.04.1 LTS: what the first point release actually fixes",
     "description": "Resolute Raccoon's first point release shipped on August 27 with refreshed ISOs, a stack of desktop and kernel fixes, and security updates through August 25. No new HWE stack, that waits for 26.04.2.",

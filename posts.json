@@ -1,5 +1,20 @@
 [
   {
+    "slug": "gnome-51-rc",
+    "title": "GNOME 51 “A Coruña”: the release candidate",
+    "description": "The 51.rc tarballs shipped the week of August 29, string freeze is in, and the stable 51.0 release lands September 16. Here is what the rc pulled in over the beta, what is already locked, and what is still being chased for the final.",
+    "pubDate": "2026-09-07T00:00:00.000Z",
+    "tags": [
+      "gnome",
+      "desktop-environment",
+      "wayland",
+      "release-notes",
+      "feature-freeze"
+    ],
+    "distro": "GNOME",
+    "version": "51.rc"
+  },
+  {
     "slug": "arch-2026-09-01",
     "title": "Arch Linux 2026.09.01: the September ISO in plain language",
     "description": "First Arch ISO to ship with Linux 7.2.2. GCC 16.2.1, glibc 2.44, Python 3.14.7, mkinitcpio 41.1, NVIDIA 610.57.04, COSMIC 1.7, and KDE Plasma 6.7.4 land in the same snapshot.",

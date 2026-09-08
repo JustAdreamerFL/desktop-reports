@@ -1,5 +1,19 @@
 [
   {
+    "slug": "plasma-675",
+    "title": "KDE Plasma 6.7.5: the September bugfix update",
+    "description": "Released September 8, 2026, this is the fifth maintenance update in the Plasma 6.7 series. It brings a month of translation updates and targeted fixes across KWin, Discover, the Task Manager, and system daemons.",
+    "pubDate": "2026-09-08T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "kde",
+      "desktop-environment",
+      "release-notes"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.7.5"
+  },
+  {
     "slug": "gnome-51-rc",
     "title": "GNOME 51 “A Coruña”: the release candidate",
     "description": "The 51.rc tarballs shipped the week of August 29, string freeze is in, and the stable 51.0 release lands September 16. Here is what the rc pulled in over the beta, what is already locked, and what is still being chased for the final.",

@@ -1,0 +1,99 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="color-scheme" content="dark light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- analytics disabled --><title>COSMIC Epoch 1.8.0: what actually changed since 1.7.0 · Desktop Reports</title><meta name="description" content="System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter."><link rel="canonical" href="https://justadreamerfl.github.io/desktop-reports/blog/cosmic-epoch-1-8-0-what-changed/"><link rel="sitemap" href="/desktop-reports/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Desktop Reports" href="/desktop-reports/rss.xml"><meta property="og:site_name" content="Desktop Reports"><meta property="og:type" content="article"><meta property="og:title" content="COSMIC Epoch 1.8.0: what actually changed since 1.7.0"><meta property="og:description" content="System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter."><meta property="og:url" content="https://justadreamerfl.github.io/desktop-reports/blog/cosmic-epoch-1-8-0-what-changed/"><meta property="og:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><meta property="article:published_time" content="2026-09-10T00:00:00.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="COSMIC Epoch 1.8.0: what actually changed since 1.7.0"><meta name="twitter:description" content="System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter."><meta name="twitter:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"COSMIC Epoch 1.8.0: what actually changed since 1.7.0","description":"System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter.","url":"https://justadreamerfl.github.io/desktop-reports/blog/cosmic-epoch-1-8-0-what-changed/","datePublished":"2026-09-10T00:00:00.000Z","author":{"@type":"Organization","name":"Desktop Reports Bot"}}</script><style>:root{--bg:#faf6ef;--bg-raised:#f1ebe0;--text:#2b2620;--text-muted:#6b6357;--accent:#a05c3b;--accent-strong:#7d4527;--moss:#5c6b4f;--border:#ddd4c4;--maxw:46rem}@media (prefers-color-scheme:dark){:root{--bg:#201d18;--bg-raised:#292520;--text:#ece5da;--text-muted:#a89e8f;--accent:#cf8560;--accent-strong:#e09a75;--moss:#93a583;--border:#3b362e}}*{box-sizing:border-box;margin:0;padding:0}html{color-scheme:light dark}body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;line-height:1.65}main{max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.25rem 3rem}a{color:var(--accent)}a:hover{color:var(--accent-strong)}.site-header{border-bottom:1px solid var(--border);background:var(--bg-raised)}.site-header .inner,.site-footer .inner{max-width:var(--maxw);flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:1rem;margin:0 auto;padding:.9rem 1.25rem;display:flex}.site-title{color:var(--text);letter-spacing:-.01em;font-size:1.15rem;font-weight:700;text-decoration:none}.site-title:hover{color:var(--accent)}.site-nav a{color:var(--text-muted);margin-left:1.1rem;font-size:.95rem;text-decoration:none}.site-nav a:hover{color:var(--accent)}.site-footer{border-top:1px solid var(--border);color:var(--text-muted);font-size:.9rem}.site-footer .inner.footer-inner{text-align:center;flex-flow:row;justify-content:center;align-items:center;gap:.55rem;padding-top:1.2rem;padding-bottom:1.2rem}.gh-link{color:var(--text-muted);align-items:center;line-height:0;display:inline-flex}.gh-link svg{display:block}.gh-link:hover{color:var(--accent)}.hero h1{letter-spacing:-.02em;margin-bottom:.6rem;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.2}.hero .tagline{color:var(--text-muted);max-width:34rem;font-size:1.08rem}.postlist{margin-top:2.2rem;list-style:none}.postlist li{border-top:1px solid var(--border);padding:1.1rem 0}.postlist a{color:var(--text);font-size:1.12rem;font-weight:650;text-decoration:none}.postlist a:hover{color:var(--accent)}.postlist time,.byline{color:var(--text-muted);margin-top:.25rem;font-size:.88rem;display:block}.badges{flex-wrap:wrap;gap:.4rem;margin-top:.4rem;display:flex}.badge{background:var(--bg-raised);border:1px solid var(--border);color:var(--text-muted);border-radius:999px;padding:.1rem .6rem;font-size:.78rem}.article-header{margin-bottom:2rem}.article-header h1{letter-spacing:-.02em;margin:.4rem 0 .6rem;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.22}.article-body{font-size:1.02rem}.article-body h2{letter-spacing:-.01em;margin:2.2rem 0 .9rem;font-size:1.35rem}.article-body h3{margin:1.7rem 0 .6rem;font-size:1.1rem}.article-body p,.article-body ul,.article-body ol{margin-bottom:.95rem}.article-body ul,.article-body ol{padding-left:1.4rem}.article-body li+li{margin-top:.3rem}.article-body table{border-collapse:collapse;width:100%;margin:1.2rem 0 1.4rem;font-size:.94rem}.article-body th,.article-body td{border:1px solid var(--border);text-align:left;vertical-align:top;padding:.55rem .7rem}.article-body th{background:var(--bg-raised)}.article-body blockquote{border-left:3px solid var(--accent);color:var(--text-muted);margin:1.2rem 0;padding:.2rem 0 .2rem 1rem}.article-body code{background:var(--bg-raised);border:1px solid var(--border);border-radius:5px;padding:.06rem .32rem;font-size:.88em}.article-body pre{background:var(--bg-raised);border:1px solid var(--border);border-radius:10px;margin:1.2rem 0;padding:.9rem 1rem;overflow-x:auto}.article-body pre code{background:0 0;border:none;padding:0}.article-body hr{border:none;border-top:1px solid var(--border);margin:2.2rem 0}.backlink{margin-top:2.5rem;font-size:.95rem;display:inline-block}
+</style></head><body><header class="site-header"><div class="inner"><a class="site-title" href="/desktop-reports">Desktop Reports</a><nav class="site-nav"><a href="/desktop-reports/blog/">Posts</a><a href="/desktop-reports/rss.xml">RSS</a></nav></div></header><main><article><header class="article-header"><time datetime="2026-09-10T00:00:00.000Z">September 10, 2026</time><h1>COSMIC Epoch 1.8.0: what actually changed since 1.7.0</h1><p class="byline">COSMIC 1.8.0</p><p class="tagline">System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter.</p></header><div class="article-body"><p>As of September 9 2026, COSMIC Epoch 1.8.0 is tagged. Epoch releases are not traditional feature drops — they are coordinated snapshots pinning twenty-plus independently developed submodules to a single, tested commit. Pop!_OS gets these changes through its internal pipeline; the epoch tag gives Arch, Fedora, NixOS, and other distros a reliable pin point. The diff between 1.7.0 and 1.8.0 is one commit (<code>e7bc6be</code>) that bumps every submodule; the real story lives in those submodule diffs.</p>
+<h2 id="things-worth-your-attention">Things worth your attention</h2>
+<h3 id="compositor-and-wayland-protocols">Compositor and Wayland protocols</h3>
+<p>The heavy lifting happened in <strong>cosmic-comp</strong>, the Wayland compositor. Nearly fifty files were touched, with the tiling layout grab handlers receiving a full rewrite for more accurate resize behavior. Three new protocol handlers landed:</p>
+<ul>
+<li><strong>tablet emulation</strong> (<code>tablet_emu.rs</code>, 256 new lines): drawing tablets now get proper input routing at the compositor level. Pressure, tilt, and rotation are exposed through the <code>ei_stylus</code> interface via libei. Krita and other stylus-aware apps should now register pen input correctly.</li>
+<li><strong>libei pasteboard sharing</strong>: copy text in an X11 app and paste it into a Wayland one without a clipboard daemon throwing a fit. The <code>libei.rs</code> module wires up the pasteboard protocol so copy/paste crosses the XWayland boundary cleanly.</li>
+<li><strong>cornerRadius protocol</strong> (<code>src/wayland/protocols/corner_radius.rs</code>): finally allows rounded window borders. The handler lives in <code>src/wayland/handlers/corner_radius.rs</code>; themes and apps can now request corner radii without hacks.</li>
+<li><strong>pointer-warp-v1</strong> (<code>src/wayland/handlers/pointer_warp.rs</code>): cross-window cursor syncing for remote-desktop and gaming use cases.</li>
+<li><strong>keyboard-layout-unstable-v1</strong> (<code>src/wayland/handlers/keyboard_layout.rs</code>): proper layout switching at the compositor level, replacing the previous config-file workaround.</li>
+</ul>
+<p>XWayland received fractional-scaling border fixes. KMS/DRM cleanup got more robust error handling. The shadow rendering module was quietly stripped out as dead code. Input handling modules grew from roughly 105 net lines to 332, reflecting a complete overhaul of pointer warping and grab state management.</p>
+<p><strong>Who it affects</strong>: users with drawing tablets, anyone copying between X11 and Wayland apps, theme authors wanting rounded corners, remote-desktop users, and anyone on fractional-scaling setups.</p>
+<h3 id="bluetooth-audio-and-system-tray-fixes">Bluetooth, audio, and system tray fixes</h3>
+<p>Outside the compositor, the changes are quieter but immediately noticeable:</p>
+<ul>
+<li><strong>Bluetooth applet</strong> (<code>cosmic-applets/cosmic-applet-bluetooth/src/bluetooth.rs</code>): now displays device alias names instead of raw MAC addresses. The Settings panel lets you rename paired devices directly without digging into the command line.</li>
+<li><strong>Audio source volume slider</strong> (same applet): a long-standing bug finally got fixed — the slider now actually adjusts the input device instead of silently rewriting the output volume.</li>
+<li><strong>Network manager applet</strong>: bumped its Rust client to <code>nmrs 3.5.2</code>, smoothing compatibility with newer NetworkManager releases.</li>
+<li><strong>System tray icons</strong>: stopped rendering downsampled when scaled below 1:1, fixing the persistent fuzzy-icon issue in smaller panels.</li>
+</ul>
+<p><strong>Who it affects</strong>: Bluetooth headphone/speaker users, anyone adjusting microphone volume, multi-monitor setups with mixed DPI panels.</p>
+<h3 id="file-manager-and-settings-polish">File manager and settings polish</h3>
+<ul>
+<li><strong>cosmic-files</strong>: the rubber-band selection no longer redraws incorrectly when you drag it. Tab focus behavior now correctly stays put when you close a different tab. The search drawer in Settings preserves your scroll position instead of resetting to the top of every section.</li>
+<li><strong>cosmic-launcher</strong>: switched to a standard <code>build.rs</code>, added its first official CI pipeline for clippy and formatting, and stopped leaking environment variables into downstream builds.</li>
+<li><strong>cosmic-greeter</strong>: finally chains sequential PAM prompts, which fixes login failures for users running dual-factor setups (e.g., password + YubiKey, or password + TOTP). It also ships full Nix flake packaging now.</li>
+</ul>
+<p><strong>Who it affects</strong>: file-manager power users, NixOS users, anyone with multi-factor authentication.</p>
+<h3 id="localization-and-new-modules">Localization and new modules</h3>
+<ul>
+<li><strong>Initial setup wizard</strong> picked up Filipino and Hungarian translation coverage.</li>
+<li><strong>cosmic-sound-theme</strong> and <strong>cosmic-screenshot</strong> modules were added to the repository structure for the first time (still early, not fully baked).</li>
+<li>The <strong>logind feature gate</strong> now compiles cleanly when building without systemd dependencies, removing a long-standing pain point for non-systemd distributions.</li>
+<li>Weblate pushed a massive localization sweep across fifteen languages (Czech to Traditional Chinese).</li>
+</ul>
+<p><strong>Who it affects</strong>: non-English users, non-systemd distro packagers, anyone waiting on a native screenshot tool or system sound theme.</p>
+<h2 id="smaller-changes">Smaller changes</h2>
+<h3 id="performance-and-internals">Performance and internals</h3>
+<ul>
+<li>Tiling layout grab handlers rewritten for more accurate resize behavior (fewer visual glitches when dragging window edges).</li>
+<li>Input subsystem overhaul: pointer warping and grab state management consolidated, reducing latency spikes during rapid window operations.</li>
+<li>KMS/DRM error paths hardened; compositor recovers more gracefully from display hotplug races.</li>
+<li>Build system hygiene: <code>logind</code> feature gate no longer forces systemd at compile time.</li>
+</ul>
+<h3 id="visual-polish">Visual polish</h3>
+<ul>
+<li>System tray icons render crisp at sub-1x scaling (no more fuzzy Bluetooth/battery icons in compact panels).</li>
+<li>New printer queue icon and refreshed browser icon in <code>cosmic-icons</code>.</li>
+<li>Rounded window borders now possible via the cornerRadius protocol (theme support required; not yet exposed in Settings).</li>
+</ul>
+<h3 id="developer-tools-and-packaging">Developer tools and packaging</h3>
+<ul>
+<li><code>cosmic-launcher</code> gained a standard <code>build.rs</code> and CI pipeline (clippy + fmt).</li>
+<li>Full Nix flake packaging for the greeter.</li>
+<li>Environment variable leakage in launcher builds plugged.</li>
+<li><code>cosmic-applibrary</code> and <code>cosmic-store</code> received version bumps and dependency updates only.</li>
+</ul>
+<h2 id="bug-fixes">Bug fixes</h2>
+<h3 id="compositor-display-input">Compositor, display, input</h3>
+<ul>
+<li>Tablet input now registers in stylus-aware apps (Krita, GIMP) — previously only pointer movement worked.</li>
+<li>X11 ↔ Wayland copy/paste works without a clipboard daemon.</li>
+<li>Fractional-scaling borders on XWayland clients no longer show gaps or double borders.</li>
+<li>Pointer warping no longer snaps cursor to (0,0) intermittently (fixes relative mouse input in games).</li>
+<li>Shadow rendering dead code removed, eliminating a minor memory leak path.</li>
+<li>Keyboard layout switching at the compositor level now works without editing <code>xkb_config</code> manually.</li>
+</ul>
+<h3 id="login-and-sessions">Login and sessions</h3>
+<ul>
+<li>Greeter PAM chaining: sequential prompts (password → second factor) no longer deadlock or drop the second factor.</li>
+<li>NixOS users can now install the greeter via flake without patching.</li>
+</ul>
+<h3 id="apps-and-applets">Apps and applets</h3>
+<ul>
+<li>Bluetooth device list shows human-readable aliases; renaming works from Settings.</li>
+<li>Microphone volume slider adjusts the correct stream (input, not output).</li>
+<li>System tray icons stay sharp at all panel sizes.</li>
+<li>File manager rubber-band selection no longer flickers/redraws incorrectly.</li>
+<li>Tab focus preserved when closing background tabs.</li>
+<li>Settings search drawer remembers scroll position.</li>
+</ul>
+<h3 id="libraries-and-build">Libraries and build</h3>
+<ul>
+<li><code>logind</code> feature gate compiles without systemd.</li>
+<li><code>nmrs</code> bumped to 3.5.2 for NetworkManager compatibility.</li>
+<li>Various Cargo.lock and dependency updates across all submodules.</li>
+</ul>
+<h2 id="known-regressions-and-deferred-work">Known regressions and deferred work</h2>
+<ul>
+<li><code>cosmic-sound-theme</code> and <code>cosmic-screenshot</code> are present in the repo but not yet functional — treat as preview only.</li>
+<li>Rounded window corners require theme support; no Settings UI to toggle them yet.</li>
+<li>Tablet emulation covers pressure/tilt/rotation; advanced stylus features (e.g., eraser end, barrel buttons) not yet mapped.</li>
+<li>The unified changelog for end users is still absent; you have to read submodule diffs to know what actually shipped versus what just compiled.</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<p>Official epoch tag on GitHub: <a href="https://github.com/pop-os/cosmic-epoch/releases/tag/epoch-1.8.0">epoch-1.8.0</a> and the submodule bump commit <a href="https://github.com/pop-os/cosmic-epoch/commit/e7bc6beb0cbcd4fe55c96045dde5765c4d337bf0">e7bc6be</a>. Submodule comparisons: <a href="https://github.com/pop-os/cosmic-comp/compare/31827ed2409f92d3bc224d3ce601c6f2136183fb...a55785993e8ef6aad38862cb1a9e1ccaad3c340d">cosmic-comp</a>, <a href="https://github.com/pop-os/cosmic-applets/compare/40248fb220c26989c4af34db315d39ffade7ead0...b933e538c043fbece3f6ecc432538608b3382819">cosmic-applets</a>, <a href="https://github.com/pop-os/cosmic-files/compare/67af455898d7ee6098c98083a330c883272b7734...089ad2b417edded26385029166e5b49c13432bf8">cosmic-files</a>, <a href="https://github.com/pop-os/cosmic-greeter/compare/">cosmic-greeter</a>, <a href="https://github.com/pop-os/cosmic-settings/compare/">cosmic-settings</a>, <a href="https://github.com/pop-os/cosmic-launcher/compare/">cosmic-launcher</a>, <a href="https://github.com/pop-os/xdg-desktop-portal-cosmic/compare/">xdg-desktop-portal-cosmic</a>. LinuxCompatible coverage of <a href="https://www.linuxcompatible.org/story/cosmic-epoch-180-tagged-system76-syncs-rust-desktop-stack-and-wayland-compositor-overhaul">the epoch tag</a>. System76 blog <a href="https://system76.com/blog/tags/COSMIC%20DE">COSMIC DE tag</a> for historical context.</p>
+</div><a class="backlink" href="/desktop-reports/blog/">← All posts</a></article></main><footer class="site-footer"><div class="inner footer-inner"><span>Release reports from the Linux desktop world</span><a class="gh-link" href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></footer></body></html>

@@ -1,5 +1,20 @@
 [
   {
+    "slug": "cosmic-epoch-1-8-0-what-changed",
+    "title": "COSMIC Epoch 1.8.0: what actually changed since 1.7.0",
+    "description": "System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter.",
+    "pubDate": "2026-09-10T00:00:00.000Z",
+    "tags": [
+      "cosmic",
+      "desktop-environment",
+      "wayland",
+      "rust",
+      "release-notes"
+    ],
+    "distro": "COSMIC",
+    "version": "1.8.0"
+  },
+  {
     "slug": "plasma-675",
     "title": "KDE Plasma 6.7.5: the September bugfix update",
     "description": "Released September 8, 2026, this is the fifth maintenance update in the Plasma 6.7 series. It brings a month of translation updates and targeted fixes across KWin, Discover, the Task Manager, and system daemons.",

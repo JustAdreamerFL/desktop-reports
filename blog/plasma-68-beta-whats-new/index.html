@@ -1,0 +1,221 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="color-scheme" content="dark light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- analytics disabled --><title>KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7 · Desktop Reports</title><meta name="description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><link rel="canonical" href="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/"><link rel="sitemap" href="/desktop-reports/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Desktop Reports" href="/desktop-reports/rss.xml"><meta property="og:site_name" content="Desktop Reports"><meta property="og:type" content="article"><meta property="og:title" content="KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7"><meta property="og:description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><meta property="og:url" content="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/"><meta property="og:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><meta property="article:published_time" content="2026-09-10T00:00:00.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7"><meta name="twitter:description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><meta name="twitter:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7","description":"The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.","url":"https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/","datePublished":"2026-09-10T00:00:00.000Z","author":{"@type":"Organization","name":"Desktop Reports Bot"}}</script><style>:root{--bg:#faf6ef;--bg-raised:#f1ebe0;--text:#2b2620;--text-muted:#6b6357;--accent:#a05c3b;--accent-strong:#7d4527;--moss:#5c6b4f;--border:#ddd4c4;--maxw:46rem}@media (prefers-color-scheme:dark){:root{--bg:#201d18;--bg-raised:#292520;--text:#ece5da;--text-muted:#a89e8f;--accent:#cf8560;--accent-strong:#e09a75;--moss:#93a583;--border:#3b362e}}*{box-sizing:border-box;margin:0;padding:0}html{color-scheme:light dark}body{background:var(--bg);color:var(--text);-webkit-font-smoothing:antialiased;font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,sans-serif;line-height:1.65}main{max-width:var(--maxw);margin:0 auto;padding:1.5rem 1.25rem 3rem}a{color:var(--accent)}a:hover{color:var(--accent-strong)}.site-header{border-bottom:1px solid var(--border);background:var(--bg-raised)}.site-header .inner,.site-footer .inner{max-width:var(--maxw);flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:1rem;margin:0 auto;padding:.9rem 1.25rem;display:flex}.site-title{color:var(--text);letter-spacing:-.01em;font-size:1.15rem;font-weight:700;text-decoration:none}.site-title:hover{color:var(--accent)}.site-nav a{color:var(--text-muted);margin-left:1.1rem;font-size:.95rem;text-decoration:none}.site-nav a:hover{color:var(--accent)}.site-footer{border-top:1px solid var(--border);color:var(--text-muted);font-size:.9rem}.site-footer .inner.footer-inner{text-align:center;flex-flow:row;justify-content:center;align-items:center;gap:.55rem;padding-top:1.2rem;padding-bottom:1.2rem}.gh-link{color:var(--text-muted);align-items:center;line-height:0;display:inline-flex}.gh-link svg{display:block}.gh-link:hover{color:var(--accent)}.hero h1{letter-spacing:-.02em;margin-bottom:.6rem;font-size:clamp(1.9rem,5vw,2.6rem);line-height:1.2}.hero .tagline{color:var(--text-muted);max-width:34rem;font-size:1.08rem}.postlist{margin-top:2.2rem;list-style:none}.postlist li{border-top:1px solid var(--border);padding:1.1rem 0}.postlist a{color:var(--text);font-size:1.12rem;font-weight:650;text-decoration:none}.postlist a:hover{color:var(--accent)}.postlist time,.byline{color:var(--text-muted);margin-top:.25rem;font-size:.88rem;display:block}.badges{flex-wrap:wrap;gap:.4rem;margin-top:.4rem;display:flex}.badge{background:var(--bg-raised);border:1px solid var(--border);color:var(--text-muted);border-radius:999px;padding:.1rem .6rem;font-size:.78rem}.article-header{margin-bottom:2rem}.article-header h1{letter-spacing:-.02em;margin:.4rem 0 .6rem;font-size:clamp(1.8rem,5vw,2.4rem);line-height:1.22}.article-body{font-size:1.02rem}.article-body h2{letter-spacing:-.01em;margin:2.2rem 0 .9rem;font-size:1.35rem}.article-body h3{margin:1.7rem 0 .6rem;font-size:1.1rem}.article-body p,.article-body ul,.article-body ol{margin-bottom:.95rem}.article-body ul,.article-body ol{padding-left:1.4rem}.article-body li+li{margin-top:.3rem}.article-body table{border-collapse:collapse;width:100%;margin:1.2rem 0 1.4rem;font-size:.94rem}.article-body th,.article-body td{border:1px solid var(--border);text-align:left;vertical-align:top;padding:.55rem .7rem}.article-body th{background:var(--bg-raised)}.article-body blockquote{border-left:3px solid var(--accent);color:var(--text-muted);margin:1.2rem 0;padding:.2rem 0 .2rem 1rem}.article-body code{background:var(--bg-raised);border:1px solid var(--border);border-radius:5px;padding:.06rem .32rem;font-size:.88em}.article-body pre{background:var(--bg-raised);border:1px solid var(--border);border-radius:10px;margin:1.2rem 0;padding:.9rem 1rem;overflow-x:auto}.article-body pre code{background:0 0;border:none;padding:0}.article-body hr{border:none;border-top:1px solid var(--border);margin:2.2rem 0}.backlink{margin-top:2.5rem;font-size:.95rem;display:inline-block}
+</style></head><body><header class="site-header"><div class="inner"><a class="site-title" href="/desktop-reports">Desktop Reports</a><nav class="site-nav"><a href="/desktop-reports/blog/">Posts</a><a href="/desktop-reports/rss.xml">RSS</a></nav></div></header><main><article><header class="article-header"><time datetime="2026-09-10T00:00:00.000Z">September 10, 2026</time><h1>KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7</h1><p class="byline">KDE Plasma 6.8</p><p class="tagline">The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.</p></header><div class="article-body"><p>As of September 10, 2026, Plasma 6.8 Beta 1 (versioned 6.7.90) is out. The final release is due October 14, coinciding with KDE’s 30th anniversary. The hard feature freeze and soft UI/string freeze took effect at this beta, so this covers practically the whole release: fixes and translations will still land before the final, new features will not. Beta 2 arrives September 24.</p>
+<h2 id="things-worth-your-attention">Things worth your attention</h2>
+<h3 id="window-management-and-compositor">Window management and compositor</h3>
+<p>KWin now applies shadows, rounded corners, and outlines to client-side-decorated (CSD) windows that lack their own decoration — think Steam, Discord, and Electron apps. This is handled by a new Breeze decoration option called “shadow-only decorations” (!583, !504225). The effect is consistent across the desktop and works on Wayland.</p>
+<p>Triple buffering is now enabled by default on NVIDIA GPUs. The bugs that blocked this in the past have been fixed, so NVIDIA users should see smoother rendering and lower latency (!9472).</p>
+<p>KWin internally uses only OpenGL ES now. The proprietary NVIDIA driver and older GPUs required this path anyway, and it turns out to be sufficient for everything KWin needs. Vulkan will replace it in a future release (!9488).</p>
+<p>Multi-GPU systems with external GPUs get a significant performance boost — up to 80% in some scenarios — because KWin now handles GPU selection more intelligently (zamundaaa.github.io write-up, July 2026).</p>
+<p>HDR support expanded: KWin now supports the HLG transfer function in addition to PQ (!508817). ICC profile handling for HDR content improved (!524038).</p>
+<p>KWin’s screenshot and screen-casting paths got faster and smoother on high-refresh-rate displays (!9756, #524129). Screen-casting latency dropped by one frame across the board, including the built-in RDP server (!274).</p>
+<p>The Overview effect is slightly easier to trigger with a four-finger swipe gesture (!9486).</p>
+<h3 id="audio-recording-in-spectacle">Audio recording in Spectacle</h3>
+<p>Spectacle can now record audio during screen recordings. You can choose system audio (what the computer plays), microphone audio, or both (#474798). This was the most-requested missing feature for screen recording and finally lands in 6.8.</p>
+<h3 id="remote-desktop-improvements">Remote desktop improvements</h3>
+<p>KRDP, Plasma’s built-in RDP server, now supports bi-directional clipboard syncing (!213). Previously only the server’s clipboard was shared one-way to the client.</p>
+<p>The RDP server can now dynamically adjust its quality level to match available network bandwidth, keeping frame rates consistent (!238).</p>
+<p>Remote desktop sessions persist correctly across disconnects, and the System Tray icon for a severed connection now disappears as expected (!234).</p>
+<p>A notification now appears when a pre-authorized app starts remote-controlling the system (#571).</p>
+<h3 id="lock-screen-and-authentication">Lock screen and authentication</h3>
+<p>The lock screen got a significant overhaul. You can now select which authentication method to use when multiple are available (password, fingerprint, etc.), and the button alignment is improved across languages (!3689, !6542, !318, !3951).</p>
+<p>Lock screen notifications now trigger for all GPUs, not just the primary one (!9768).</p>
+<p>Auto-login works in Plasma Login Manager on distros with older systemd versions like KDE neon (#522006).</p>
+<h3 id="system-settings-search-in-english">System Settings search in English</h3>
+<p>When using the system in a non-English language, you can now search for System Settings pages using English keywords in KRunner and Kickoff, not just the local language (!418). For example, searching “mouse” finds “Souris” on a French system.</p>
+<h3 id="wallpaper-and-theming">Wallpaper and theming</h3>
+<p>The default wallpaper changed from Waterfall to Hanabi (commit 0b1e6ce).</p>
+<p>SVG-based wallpapers now fully participate in the automatic dark/light wallpaper switching feature (#519168).</p>
+<p>Wallpaper slideshows can be configured to not change automatically — you switch manually via the desktop context menu or a global shortcut (#518669).</p>
+<p>If all wallpaper plugins are broken, missing, or misconfigured, Plasma now launches with a plain background instead of failing to start (#524875).</p>
+<p>Union, KDE’s new CSS-based theming system, gained initial support for styling QtWidgets apps (!270). This is a tech preview — visual glitches are expected and known. Dolphin and other QtWidgets apps can now be themed through Union, unifying theming across QtQuick and QtWidgets apps.</p>
+<p>Breeze styling for GTK4 apps’ menus and window borders improved (!104).</p>
+<p>Dark GTK2 theme detection improved, so old GTK2 apps get legible icons more reliably when using a dark color theme (!144).</p>
+<h3 id="system-monitor-upgrades">System Monitor upgrades</h3>
+<p>System Monitor can now measure VRAM usage as a percentage of total VRAM, not just absolute bytes (!135). This mirrors how RAM usage is displayed.</p>
+<p>You can set CPU affinity for processes — pin a process to specific cores or core groups (!420). This is a power-user feature for fine-tuned workload placement.</p>
+<p>The Process Table view shows fractional axis values when needed, and the tree view has better text alignment (!521041, #442095).</p>
+<p>System Monitor graphs request tabular (monospaced) numerals for legends when the font supports them, improving alignment (kquickcharts #109).</p>
+<h3 id="notifications-and-clipboard">Notifications and clipboard</h3>
+<p>Notifications now slide in from off-screen instead of fading in, with a more natural easing curve (#522276). The sliding animation was refined after its initial introduction.</p>
+<p>When you copy text marked as a secret (like a password), the clipboard history UI now shows a clear warning instead of hiding the entry and leaving you wondering why nothing appeared (#508326).</p>
+<p>The screen recording indicator only appears while recording is actually in progress, fixing cases where apps opened sessions early but started recording later (!597).</p>
+<p>The “Bouncing app icon” launch feedback animation uses a better physics model, easing curve, and higher frame rate (!9487).</p>
+<h3 id="input-and-accessibility">Input and accessibility</h3>
+<p>The Emoji Selector updated to Unicode 17, adding new emoji like 🫨 🫪 🐦‍🔥 🏴‍☠️ (#3849). The emoji grid now has resize controls (!3878).</p>
+<p>Press-and-hold for alternative characters now triggers after 600 ms instead of 200 ms, making accidental activation much harder (#157).</p>
+<p>Dwell clicker support landed for accessibility on Wayland — you can click by hovering without pressing a physical button (Phoronix coverage).</p>
+<p>Stylus interaction works in Overview and Custom Tiling overlays on Wayland (#468396, #522677).</p>
+<p>System tray icons that open widgets now stay visible until the widget popup closes, so you can click a second time to dismiss it (#521115).</p>
+<h3 id="network-and-connectivity">Network and connectivity</h3>
+<p>Connecting to an enterprise Wi-Fi network for the first time takes you directly to the credential entry page (!635).</p>
+<p>Wireless access points can be configured to automatically select a channel in the Networks System Settings page.</p>
+<p>Bluetooth widget’s “Configure” button moved to the standard position for consistency (#516134).</p>
+<p>StrongSwan VPN support added EAP-TTLS authentication (!636).</p>
+<p>Flatpak version of Microsoft Edge is now supported in Plasma Browser Integration (#521109).</p>
+<h3 id="performance-and-resource-usage">Performance and resource usage</h3>
+<p>Discover’s background notifier process uses much less memory when checking for updates (#509180).</p>
+<p>Plasma startup is slightly faster by avoiding unnecessary work when loading wallpapers (!6898).</p>
+<p>SVG caching improved in Frameworks 6.30, increasing speed and reducing video memory usage (#115).</p>
+<p>Spectacle dropped the OpenCV dependency; blur effects are now implemented without it (!561, kquickimageeditor #53).</p>
+<p>Thumbnail rendering in notifications and the Activities sidebar uses fewer resources (!6966, !3967). The Trash widget also uses less memory (!3965).</p>
+<p>Disabling a System Tray widget frees its memory immediately, not just after restart (!6983).</p>
+<p>The clipboard’s “Keep selection and clipboard the same” setting no longer breaks multi-cell copying in LibreOffice Calc (#505209) and no longer unnecessarily disables other settings (#492840).</p>
+<h3 id="calendar-and-clock">Calendar and clock</h3>
+<p>Digital Clock widget text for calendar events is now fully selectable (#433668).</p>
+<p>Digital Clock requests tabular numerals, preventing width changes as time passes (!6797).</p>
+<p>The Digital Clock tooltip expands to fit long text instead of overflowing (#6950).</p>
+<h3 id="drawing-tablet-and-input-devices">Drawing tablet and input devices</h3>
+<p>The Drawing Tablet settings page has a less awkward dialog for configuring pen button mappings (#524720).</p>
+<p>Amharic virtual keyboard layout added (!118).</p>
+<h3 id="system-settings-and-configuration">System Settings and configuration</h3>
+<p>You can disable autostart entries without deleting them (!6951).</p>
+<p>The Remote Desktop System Settings page works on small/narrow window sizes like phones (!208).</p>
+<p>Non-default settings highlighting works on the Remote Desktop page (!232) and the Plasma Search page (!3973).</p>
+<p>The “Report a Bug in the Current Page” feature works for pages that list a bug reporting URL even if they didn’t come from KDE (!412).</p>
+<p>KWin prevents setting a resolution so low you’d break your system and be unable to recover (!9765).</p>
+<h3 id="removed-x11-session">Removed: X11 session</h3>
+<p>Plasma 6.8 drops the X11 session entirely — Wayland is now the only session. X11 applications still run via Xwayland. The X11 session will be supported by KDE into early 2027 through Plasma 6.7 bugfix releases. This is the biggest architectural change in Plasma’s 30-year history (announcement blog post, Nov 2025).</p>
+<h3 id="smaller-changes">Smaller changes</h3>
+<h4 id="visual-polish">Visual polish</h4>
+<ul>
+<li>Comboboxes in Plasma now use the active theme for their popups instead of hardcoded Breeze styling, and menu highlights no longer animate (!1547, !1550).</li>
+<li>In-window dialogs in Kirigami apps are better highlighted against window content in dark themes (#447965).</li>
+<li>Audio Volume widget popup starts large enough to fit all content without scrolling (#522654).</li>
+<li>Cursor feedback effects dodge screen edges so they’re always fully visible (#498068).</li>
+<li>Menu Editor has fewer visual frames (!59).</li>
+<li>“CD and DVD” category in Discover renamed to “Disc Burning” to match the FreeDesktop spec (!1350).</li>
+<li>Breeze icon theme adds icons for Android app bundle files (#508430) and Typst documents (#554).</li>
+<li>System Tray crash icons: only one sad-face icon appears when many crashes occur; clicking it shows the full list (#420443).</li>
+</ul>
+<h4 id="developer-tools-and-internals">Developer tools and internals</h4>
+<ul>
+<li><code>showConfigurationInterface()</code> now works in Plasma scripting (!6977).</li>
+<li>System Settings Proxy page rewritten in QML for Plasma Mobile compatibility (kio-extras #536).</li>
+<li>KGlobalAccel internals refactored: dropped X11 bits, normalized shortcut formats, improved lookups (multiple MRs).</li>
+<li>Kirigami tab bars respond to scroll and standard tab-switching shortcuts (kirigami #2123).</li>
+<li>Frameworks 6.30 requires Qt 6.11 and KDE Frameworks 6.30 (version bumps across all modules).</li>
+</ul>
+<h4 id="content-and-smaller-apps">Content and smaller apps</h4>
+<ul>
+<li>Ethiopian calendar (13-month) added to alternate calendars (!1079).</li>
+<li>Nepali (Bikram Sambat) and Ethiopian calendars supported in Plasma Addons (!1445c41, !076c13a).</li>
+<li>Vietnamese lunar calendar shows text in Vietnamese regardless of system language (#521787).</li>
+<li>Time zone offset calculations fixed for half-hour offsets earlier than local time (#522037).</li>
+<li>Calendar widget no longer changes displayed date when dragged between screens (#472360).</li>
+<li>Weather widget centers location label, improves badge positioning, uses EnvCan icon codes, and fixes layout issues (multiple MRs).</li>
+<li>Color Picker widget sizing fixes (#522377, #517052).</li>
+<li>KDE Connect SMS app permissions page ported to new Forms (flatpak-kcm #1c4d978).</li>
+<li>KWallet stops spamming logs in non-default configurations (#524500).</li>
+</ul>
+<h4 id="performance-and-technical">Performance and technical</h4>
+<ul>
+<li>KWin’s “press and hold for alternative characters” implementation prioritizes app compatibility, fixing many bugs (#152).</li>
+<li>Spectacle no longer includes tooltip with image dimensions in final screenshot when accepting region by double-click (#513715).</li>
+<li>Mic tester records at system sample rate instead of forcing 44.1 kHz (#523693).</li>
+<li>Emulated Input protocol version 1.6 supported (!9112).</li>
+<li>KWin variable refresh rate crash on multi-monitor setups fixed (#521909).</li>
+<li>Full-screen video playback performance improved in Chromium-based apps (#521960).</li>
+<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes, fixing Bubblewrap sandboxing (#521013).</li>
+<li>XWayland apps behave correctly after XWayland crashes and restarts (kwindowsystem #220).</li>
+<li>Task Manager hardened against maliciously-crafted .desktop files (!6817).</li>
+<li><code>ksystemstats_intel_helper</code> hardened against path traversal (#141).</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<h4 id="compositor-display-and-input">Compositor, display, and input</h4>
+<ul>
+<li>Fixed most common Plasma crash (multi-screen related) (#500044).</li>
+<li>Fixed second-most-common crash on logout (!6973).</li>
+<li>KWin crash on lock screen with NVIDIA GPU fixed (#520842).</li>
+<li>KWin crash with DisplayLink monitors fixed (#520361).</li>
+<li>Screens on hybrid NVIDIA/AMD laptops no longer freeze (#521727).</li>
+<li>Shader-based KWin effects (Burn My Windows) restored (#521774).</li>
+<li>Color-related effects (color blindness correction, screen inversion) restored (#521737).</li>
+<li>Corrupted visuals on rotated screens and older AMD GPUs fixed (#521878, #521764).</li>
+<li>SDR content desaturation in HDR mode fixed (#521759).</li>
+<li>ICC profile color correctness fixed (#522301).</li>
+<li>KWin lag/hang with poorly-optimized Proton games fixed (#522005).</li>
+<li>Pointer movement in VMs with non-accelerated graphics fixed (#524280).</li>
+<li>Screens incorrectly notifying disconnect/reconnect loop after sleep fixed (#521826).</li>
+<li>Drag-and-drop of desktop files/folders between screens restored (#521713).</li>
+<li>Variable refresh rate crash on multi-monitor setups fixed (#521909).</li>
+<li>Right-to-left languages no longer prevent force-quitting processes in System Monitor (#522233).</li>
+</ul>
+<h4 id="login-and-sessions">Login and sessions</h4>
+<ul>
+<li>Screen locker security issue fixed: manual config to turn off screen after “don’t require password” period no longer fails to lock (#523504).</li>
+<li>Auto-login works on older systemd versions (#522006).</li>
+<li>Logout sound no longer delays logout more than necessary (#491745).</li>
+<li>Wallpaper slideshows now remember last-seen wallpaper instead of restarting from first (#512559).</li>
+<li>Activity deletion no longer crashes Plasma; switches to next activity instead (#521124).</li>
+<li>System Monitor no longer crashes when quitting with column config dialog open (#491000).</li>
+<li>DrKonqi crash handler no longer crashes in a loop on severely broken systems (#524048).</li>
+</ul>
+<h4 id="apps">Apps</h4>
+<ul>
+<li>Discover no longer gets stuck checking for updates when Snap backend present but no upgradeable Snaps (#524077).</li>
+<li>Discover terminates all processes properly on quit (!1393).</li>
+<li>Discover remembers review usefulness ratings and doesn’t let you resubmit (#521866).</li>
+<li>Discover only offers .deb packages on distros that support them (!3957).</li>
+<li>Discover fixes: updates stuck when fwupd unavailable (#521682), Snap backend signals completion correctly (#524077), AppStream preview backend added (#4a02b82), package review usefulness persistent (#521866).</li>
+<li>Non-KDE apps no longer crash when closing a dialog (#523039).</li>
+<li>Calendar widget no longer shows info buttons for alerts that do nothing (#519676).</li>
+<li>Weather widget info buttons only appear when functional (#519676, plasma-addons #d13f147).</li>
+<li>Color Picker widget layout regressions fixed (#522377).</li>
+<li>System Monitor Configure Columns popup is now a traditional window, fixing scroll glitch (#517723).</li>
+<li>Networks widget: connecting to uneditable network no longer makes others look connected (#461028).</li>
+<li>Audio Volume widget shows correct panel icon under unusual conditions (#422).</li>
+<li>Remote desktop connection icon disappears correctly after unexpected disconnect (#234).</li>
+<li>RDP server systemd regression fixed (#521776).</li>
+<li>Chromium apps no longer freeze when another window forced “Keep Above Others” (#521687).</li>
+<li>Plasma no longer crashes after ejecting audio CD from Dolphin/Audex (#522051).</li>
+<li>Kickoff/Kicker: multiple widgets can all return search results for not-yet-installed apps (#511220).</li>
+<li>System Settings sub-category sidebar switching fixed in less-common interaction modes (#415).</li>
+<li>Digital Clock “Today” button highlights correct day in time zones later than UTC (#521114).</li>
+<li>Screencast permission no longer requires identical screen setup to when permission granted (#519122).</li>
+<li>Portal dialog explanatory text shows correctly (#584).</li>
+<li>Icons-Only Task Manager no longer breaks from <code>metadata.desktop</code> in home folder (#521247).</li>
+<li>Weather widget no longer endlessly reloads after wake from sleep (#517280).</li>
+<li>System Monitor graphs show fractional axis values (#521041).</li>
+<li>Un-favoriting apps with weird characters works (#520894).</li>
+<li>Notification icon no longer gets stuck half-rotated (#458156).</li>
+<li>Screen Locking page translated label no longer reverts to English after save (#521293).</li>
+<li>Color Picker widget no longer overflows in Grouping widget (#517052).</li>
+<li>Media Frame widget no longer displays every other image sharpened (#521534).</li>
+<li>Choose Application window no longer percent-encodes filename characters (#521748).</li>
+<li>Mouse page in System Settings no longer has layout glitches in X11 (#521992).</li>
+<li>Networks widget Details tab text no longer overflows (#522333).</li>
+<li>KRunner Bookmarks provider returns results for 2-char queries, uses fewer resources (#6764).</li>
+<li>Clipboard widget Actions Configuration page margins improved (#6779).</li>
+<li>Secret keyboard shortcut (<code>Meta</code>+<code>Ctrl</code>+<code>x</code>) for clipboard actions removed (#6773).</li>
+<li>DrKonqi tells you when safe to close window (#397).</li>
+<li>Kameleon system service disabled by default (#521793).</li>
+<li>Pointer with software rendering no longer disappears when panel dodges windows (#521953).</li>
+<li>Force-quitting processes in System Monitor works with RTL languages (#522233).</li>
+</ul>
+<h4 id="security">Security</h4>
+<ul>
+<li>Task Manager hardened against malicious .desktop files (!6817).</li>
+<li><code>ksystemstats_intel_helper</code> hardened against path traversal (#141).</li>
+<li>Screen locker locking logic fixed for edge-case configuration (#523504).</li>
+<li>Flatpak background service crash fixed when allowing app update via KDE portal (#6686).</li>
+<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes (#521013).</li>
+</ul>
+<h4 id="libraries-and-build">Libraries and build</h4>
+<ul>
+<li>Qt version requirement bumped to 6.11 across all Plasma modules.</li>
+<li>KDE Frameworks requirement bumped to 6.30 across all Plasma modules.</li>
+<li>KGlobalAccel dropped X11 code paths, normalized shortcut handling.</li>
+<li>KWin split into kwin_wayland and kwin_x11 (from 6.4) — X11 bits now fully removed.</li>
+<li>Multiple modules ported to KConfigXT, QML modules, and modern CMake patterns.</li>
+</ul>
+<h3 id="known-regressions-and-deferred-work">Known regressions and deferred work</h3>
+<ul>
+<li>Union theming for QtWidgets apps has known visual glitches (acknowledged in announcement).</li>
+<li>Location-based timezone setting deferred; depends on Date &amp; Time KCM QML conversion (!3653).</li>
+<li>Some accessibility features from third-party apps may not work as well on Wayland-only session.</li>
+<li>Output mirroring issues being actively worked on.</li>
+<li>Session restore and window position memory still being improved.</li>
+</ul>
+<h2 id="sources">Sources</h2>
+<p>Official KDE announcement for Plasma 6.8 Beta: <a href="https://kde.org/announcements/plasma/6/6.7.90/">6.7.90</a>. Complete changelog from 6.7.5 to 6.7.90: <a href="https://kde.org/announcements/changelogs/plasma/6/6.7.5-6.7.90">changelog</a>. KDE Community Wiki page for Plasma 6.8 features: <a href="https://community.kde.org/Plasma/Plasma_6#Plasma_6.8">Plasma 6.8</a>. Phoronix coverage of Plasma 6.8 performance optimizations: <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-More-Performance">August 21</a> and <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-Autoscroll">triple buffering</a>. 9to5Linux preview of Plasma 6.8: <a href="https://9to5linux.com/kde-plasma-6-8-desktop-environment-is-coming-on-october-14th-heres-what-to-expect">October 14 release</a>. “This Week in Plasma” blog posts covering the 6.8 development cycle: <a href="https://blogs.kde.org/2026/07/11/this-week-in-plasma-audio-recording-in-spectacle/">Audio Recording in Spectacle</a>, <a href="https://blogs.kde.org/2026/07/04/this-week-in-plasma-better-animations/">Better Animations</a>, <a href="https://blogs.kde.org/2026/08/22/this-week-in-plasma-ui-and-performance-improvements/">UI and Performance Improvements</a>, <a href="https://blogs.kde.org/2026/08/28/this-week-in-plasma-qtwidgets-apps-join-the-union/">QtWidgets Apps Join the Union</a>, <a href="https://blogs.kde.org/2026/06/27/this-week-in-plasma-post-6.7-bug-fixing/">Post-6.7 Bug-fixing</a>, and <a href="https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/">Going all-in on a Wayland future</a>. New In Linux feature summary: <a href="https://www.newinlinux.com/these-are-the-most-exciting-features-in-plasma-6-8-so-far/">Plasma 6.8 features</a>.</p>
+</div><a class="backlink" href="/desktop-reports/blog/">← All posts</a></article></main><footer class="site-footer"><div class="inner footer-inner"><span>Release reports from the Linux desktop world</span><a class="gh-link" href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></footer></body></html>

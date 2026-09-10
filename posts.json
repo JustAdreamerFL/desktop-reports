@@ -15,6 +15,21 @@
     "version": "1.8.0"
   },
   {
+    "slug": "plasma-68-beta-whats-new",
+    "title": "KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7",
+    "description": "The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.",
+    "pubDate": "2026-09-10T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "desktop-environment",
+      "wayland",
+      "release-notes",
+      "feature-freeze"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.8"
+  },
+  {
     "slug": "plasma-675",
     "title": "KDE Plasma 6.7.5: the September bugfix update",
     "description": "Released September 8, 2026, this is the fifth maintenance update in the Plasma 6.7 series. It brings a month of translation updates and targeted fixes across KWin, Discover, the Task Manager, and system daemons.",

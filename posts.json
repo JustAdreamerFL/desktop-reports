@@ -23,8 +23,7 @@
       "desktop-environment",
       "wayland",
       "elementary-os",
-      "release-notes",
-      "feature-freeze"
+      "release-notes"
     ],
     "distro": "Pantheon",
     "version": "8.1"

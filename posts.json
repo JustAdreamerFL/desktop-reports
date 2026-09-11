@@ -1,5 +1,19 @@
 [
   {
+    "slug": "flatpak-119-whats-new",
+    "title": "Flatpak 1.19: what actually changed",
+    "description": "Flatpak 1.19 ships as a beta development release, dominated by nine security fixes and a polkit-authenticated path for system-wide downgrades.",
+    "pubDate": "2026-09-11T00:00:00.000Z",
+    "tags": [
+      "flatpak",
+      "application-sandboxing",
+      "security",
+      "feature-freeze"
+    ],
+    "distro": "Flatpak",
+    "version": "1.19.0"
+  },
+  {
     "slug": "cosmic-epoch-1-8-0-what-changed",
     "title": "COSMIC Epoch 1.8.0: what actually changed since 1.7.0",
     "description": "System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter.",

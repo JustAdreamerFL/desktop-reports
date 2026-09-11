@@ -14,6 +14,22 @@
     "version": "1.19.0"
   },
   {
+    "slug": "pantheon-8-1",
+    "title": "Pantheon 8.1: what actually changed",
+    "description": "Elementary OS 8.1 ships with the Secure Session as default, a blur-behind Dock, background-app management, new Monitor and Maps apps, and over 1,100 fixed issues.",
+    "pubDate": "2026-09-11T00:00:00.000Z",
+    "tags": [
+      "pantheon",
+      "desktop-environment",
+      "wayland",
+      "elementary-os",
+      "release-notes",
+      "feature-freeze"
+    ],
+    "distro": "Pantheon",
+    "version": "8.1"
+  },
+  {
     "slug": "cosmic-epoch-1-8-0-what-changed",
     "title": "COSMIC Epoch 1.8.0: what actually changed since 1.7.0",
     "description": "System76 tagged a coordinated submodule bump centered on a major cosmic-comp compositor overhaul. Tablet emulation, libei pasteboard sharing, rounded window corners, and multi-factor PAM login are the headliners, plus a raft of fixes across applets, files, and the greeter.",

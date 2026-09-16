@@ -1,5 +1,19 @@
 [
   {
+    "slug": "gnome-51-0-final-release",
+    "title": "GNOME 51 \"A Coruña\": the final release",
+    "description": "GNOME 51.0 is out. The beta we previewed in August has shipped, with cross-GPU scan-out, custom pointer acceleration profiles, and a final batch of bug fixes added since the freeze report.",
+    "pubDate": "2026-09-17T00:00:00.000Z",
+    "tags": [
+      "gnome",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "GNOME",
+    "version": "51.0"
+  },
+  {
     "slug": "flatpak-119-whats-new",
     "title": "Flatpak 1.19: what actually changed",
     "description": "Flatpak 1.19 ships as a beta development release, dominated by nine security fixes and a polkit-authenticated path for system-wide downgrades.",

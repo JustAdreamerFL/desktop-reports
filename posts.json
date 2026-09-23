@@ -1,5 +1,20 @@
 [
   {
+    "slug": "cosmic-epoch-1-9-0-what-changed",
+    "title": "COSMIC Epoch 1.9.0: what actually changed since 1.8.0",
+    "description": "System76 tagged a coordinated submodule bump that adds two new modules to the epoch: cosmic-osk, the on-screen keyboard, and cosmic-viewer, the image viewer. git-lfs becomes a required dependency.",
+    "pubDate": "2026-09-24T00:00:00.000Z",
+    "tags": [
+      "cosmic",
+      "desktop-environment",
+      "wayland",
+      "rust",
+      "release-notes"
+    ],
+    "distro": "COSMIC",
+    "version": "1.9.0"
+  },
+  {
     "slug": "gnome-51-0-final-release",
     "title": "GNOME 51 \"A Coruña\": the final release",
     "description": "GNOME 51.0 is out. The beta we previewed in August has shipped, with cross-GPU scan-out, custom pointer acceleration profiles, and a final batch of bug fixes added since the freeze report.",

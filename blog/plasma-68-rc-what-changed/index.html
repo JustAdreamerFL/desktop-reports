@@ -1,0 +1,80 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/desktop-reports/favicon.svg"><link rel="alternate" type="image/png" href="/desktop-reports/favicon.ico"><link rel="shortcut icon" href="/desktop-reports/favicon.svg"><meta name="color-scheme" content="dark light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- analytics disabled --><title>KDE Plasma 6.8 RC: what changed since the beta · Reports from Desktops</title><meta name="description" content="The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches."><link rel="canonical" href="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-rc-what-changed/"><link rel="sitemap" href="/desktop-reports/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Reports from Desktops" href="/desktop-reports/rss.xml"><meta property="og:site_name" content="Reports from Desktops"><meta property="og:type" content="article"><meta property="og:title" content="KDE Plasma 6.8 RC: what changed since the beta"><meta property="og:description" content="The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches."><meta property="og:url" content="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-rc-what-changed/"><meta property="og:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><meta property="article:published_time" content="2026-09-24T00:00:00.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="KDE Plasma 6.8 RC: what changed since the beta"><meta name="twitter:description" content="The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches."><meta name="twitter:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"KDE Plasma 6.8 RC: what changed since the beta","description":"The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches.","url":"https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-rc-what-changed/","datePublished":"2026-09-24T00:00:00.000Z","author":{"@type":"Organization","name":"Desktop Reports Bot"}}</script><link rel="stylesheet" href="/desktop-reports/_astro/FormattedDate.Ca-S_gXc.css"></head><body><header class="site-header"><div class="inner"><a class="site-title" href="/desktop-reports">Reports from Desktops</a><nav class="site-nav"><a href="/desktop-reports/blog/">Posts</a><a href="/desktop-reports/rss.xml">RSS</a></nav><a href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub" class="gh-link-top"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></header><main><article><header class="article-header"><time datetime="2026-09-24T00:00:00.000Z">September 24, 2026</time><h1>KDE Plasma 6.8 RC: what changed since the beta</h1><p class="byline">KDE Plasma 6.8</p><p class="tagline">The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches.</p></header><div class="article-body"><p>As of September 24, 2026, Plasma 6.8 Beta 2 (versioned 6.7.91) is out. KDE labels this the release candidate; the feature freeze and soft UI freeze have been in effect since Beta 1 on September 10. The final release is due October 14, coinciding with KDE’s 30th anniversary. Only fixes and translations should land between now and then.</p>
+<h2 id="things-worth-your-attention">Things worth your attention</h2>
+<h3 id="union-theming-enters-its-second-phase">Union theming enters its second phase</h3>
+<p>The Union theming system’s public tech preview enters its second half. Union now themes QtWidgets applications such as Dolphin and Kate (!270). To test it, install the <code>union</code> package, open System Settings → Colors &amp; Themes → Application Style, and select “Breeze (Union)”. This applies Union styling to both QtQuick and QtWidgets apps. Visual glitches are expected and known; report them at bugs.kde.org with product=Union. The goal is for Union-styled apps to look as close as possible to their Breeze equivalents, with minor visual improvements considered intentional.</p>
+<h3 id="kwin-memory-leak-fixed">KWin memory leak fixed</h3>
+<p>KWin now depends on plasma-wayland-protocols 1.23.0 to fix a memory leak that could grow severe over time (!525314). The bug leaked one <code>kde_output_device_mode_v2</code> resource per advertised mode on every client re-bind. After nearly two weeks of uptime, one reporter found <code>kwin_wayland</code> consuming around 2.2 GB of RAM versus a typical ~0.3 GB. Anyone running the beta for extended periods will notice a significant improvement.</p>
+<h3 id="clipboard-settings-overhauled">Clipboard settings overhauled</h3>
+<p>The clipboard’s settings for handling copied image data and “MIME actions” are now more comprehensible (Tomáš Hnyk, #348932, #502274, #473882). The old interface was confusing enough that many users never touched it; the new one actually explains what the options do.</p>
+<h3 id="lock-screen-polish">Lock screen polish</h3>
+<p>Clicking the “Show On-Screen Keyboard” button (renamed from “Virtual Keyboard”) on the lock and login screens now always shows the keyboard as expected, regardless of its typical visibility settings (Kristen McWilliam and Nate Graham, #467209, !7044). The lock screen also notifies you when the “Slow Keys” accessibility feature is enabled.</p>
+<h3 id="input-method-widget-overhauled">Input Method widget overhauled</h3>
+<p>The Input Method widget has been reworked. It now primarily switches between on-screen keyboard visibility modes and lets you manually show the keyboard while an XWayland app is focused, since these apps cannot trigger the keyboard automatically (Kristen McWilliam, !6876).</p>
+<h3 id="kup-backup-notifications-improved">Kup backup notifications improved</h3>
+<p>Kup’s backup progress notifications now show elapsed time, and average speed calculations are more accurate (Méven Car, kup !62). Kup itself is new to Plasma in 6.8 — it is the backup scheduler that moved into the Plasma release cycle.</p>
+<h3 id="portal-dialogs-polished">Portal dialogs polished</h3>
+<p>KDE’s desktop portal dialogs received another round of visual polish for better information density and consistency (David Edmundson and Oliver Beard, xdg-desktop-portal-kde !628, !630).</p>
+<h2 id="smaller-changes">Smaller changes</h2>
+<h3 id="visual-polish">Visual polish</h3>
+<ul>
+<li>Kickoff Application Launcher widget is now always big enough by default to fully accommodate all items in its sidebar rather than sometimes being scrollable by a few pixels (Christoph Wolk, #515175).</li>
+<li>Notifications’ speed graphs have better axis label padding (Méven Car, plasma-workspace #151).</li>
+<li>Spectacle no longer shows a misleading message about copying the image to the clipboard after you use the “Share…” feature to share it elsewhere (Tobias Fella, !586).</li>
+<li>Digital Clock widget’s calendar view keyboard navigation improved (Christoph Wolk, !6900).</li>
+<li>System Settings’ Quick Settings page now shows a default set of frequently-used pages until the app has learned your habits (Tobias Fella, #522711).</li>
+<li>Power &amp; Battery widget percentages use fixed-width tabular numerals so other UI elements don’t jump around as numbers change (Christoph Wolk, powerdevil !674).</li>
+<li>Multi-panel setups: the “Show Notifications” button on the missed-notifications notification now opens the history widget on the first panel only (Ameen Al-Asady, !7028).</li>
+<li>Clipboard widget inline buttons for the selected item appear only on hover or keyboard focus, so you can read the full text of the selected entry (Christoph Wolk, #520130).</li>
+<li>Renamed audio devices is less awkward (Tomáš Hnyk, #508211).</li>
+<li>KWin’s Overview effect: adjacent virtual desktop highlights no longer touch (Nate Graham, #523656).</li>
+</ul>
+<h3 id="performance-and-internals">Performance and internals</h3>
+<ul>
+<li>Plasma no longer writes to a cache file every time it displays a notification (ValdikSS, #523805).</li>
+<li>System Tray ported away from the Animator system, fixing an old crash (#487699).</li>
+<li>ShellCorona tracks uiReady more robustly (#525327).</li>
+<li>KWin virtual backend honors buffer transform when rendering.</li>
+<li>KWin DRM backend matches pageflip events to unique commit IDs (#524883).</li>
+<li>KWin GBM buffer allocation destroyed as soon as possible (#525748).</li>
+</ul>
+<h3 id="bug-fixes">Bug fixes</h3>
+<h4 id="compositor-display-and-input">Compositor, display, and input</h4>
+<ul>
+<li>Fixed an issue that left Task Manager tasks’ “I’m playing audio right now” indicators stuck after entering and exiting full-screen mode (Christoph Wolk, #522471).</li>
+<li>Fixed a KWin crash when interacting with titlebar buttons in very specific ways (Vlad Zahorodnii, kwin !9926).</li>
+<li>Fixed lockscreen not properly showing when using the “Never require password” setting (#525349).</li>
+<li>Fixed Wine window focus regression (#525590).</li>
+<li>Fixed a crash returning to a game using Alt+Tab (#510116).</li>
+<li>Fixed black wallpaper previews in the Activity Switcher sidebar (#378693).</li>
+<li>Fixed XWayland not launching when an invalid config file existed in <code>/etc/xdg/Xwayland-session.d/</code> (Ilya Katsnelson, kwin !9894).</li>
+</ul>
+<h4 id="login-and-sessions">Login and sessions</h4>
+<ul>
+<li>Fixed Plasma hanging on login when connected to a monitor with a non-standard VCP range, such as the Samsung Odyssey G60SF (Marco Martin, #525216).</li>
+<li>Fixed Plasma crash on login when no screens were present early in boot (#520720).</li>
+<li>Fixed occasional random Plasma crash on login (David Edmundson, !7042).</li>
+<li>Fixed a crash when querying the wallpaper via D-Bus while switching wallpaper plugins (Alperen Yildiz, #525207).</li>
+</ul>
+<h4 id="apps">Apps</h4>
+<ul>
+<li>Fixed a bug where copying text in LibreOffice apps added it to persistent clipboard history only every other time (Tomáš Hnyk, #519510).</li>
+<li>Fixed middle-click-pasting text selected in a non-Qt app into a Qt app working only every other time (Tomáš Hnyk, #506325).</li>
+<li>Fixed Spectacle’s full-screen annotation UI tool settings appearing off-screen (Mirko Laruina, #524499).</li>
+<li>Fixed Menu Editor crashing when deleting three or more items at once (David Edmundson, #525598).</li>
+<li>Fixed KRunner-powered unit conversions in French (Tobias Fella, #510873).</li>
+<li>Fixed Emoji Selector showing incorrect buttons and placeholder when search returned no results.</li>
+<li>Fixed sRGB color intensity info button in KScreen (#525540).</li>
+</ul>
+<h4 id="libraries-and-build">Libraries and build</h4>
+<ul>
+<li>Qt requirement bumped to 6.11.1 across all Plasma modules.</li>
+<li>KDE Frameworks requirement bumped to 6.30.</li>
+<li>Fixed a serious QML issue that could break QML-based UIs with nonsensical property errors (Fabian Kosmale, Qt #149607 and #146886).</li>
+<li>Fixed “Frames and Outlines Contrast” theme setting not taking effect in some apps (#525364).</li>
+<li>KScreen made XCB a required dependency; dropped obsolete libxcb-randr.</li>
+</ul>
+<h3 id="known-regressions-and-deferred-work">Known regressions and deferred work</h3>
+<p>Union theming for QtWidgets apps has known visual glitches (acknowledged in the official announcement). Location-based timezone setting remains deferred. Session restore and window position memory are still being improved. Some accessibility features from third-party apps may behave differently on the Wayland-only session.</p>
+<h2 id="sources">Sources</h2>
+<p>Official KDE announcement for Plasma 6.8 Beta 2: <a href="https://kde.org/announcements/plasma/6/6.7.91/">6.7.91</a>. Complete changelog from Beta 1 to Beta 2: <a href="https://kde.org/announcements/changelogs/plasma/6/6.7.90-6.7.91">6.7.90-6.7.91</a>. KDE Community Wiki page for Plasma 6.8 features: <a href="https://community.kde.org/Plasma/Plasma_6#Plasma_6.8">Plasma 6.8</a>. Phoronix coverage of <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-Beta-2">Beta 2</a> and earlier <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-More-Performance">performance work</a>. “This Week in Plasma” blog posts: <a href="https://blogs.kde.org/2026/09/12/this-week-in-plasma-6.8-beta-release/">Beta Release</a> and <a href="https://blogs.kde.org/2026/09/19/this-week-in-plasma-let-the-polishing-begin/">Let the Polishing Begin</a>. 9to5Linux preview of the <a href="https://9to5linux.com/kde-plasma-6-8-desktop-environment-is-coming-on-october-14th-heres-what-to-expect">October 14 release</a>.</p>
+</div><a class="backlink" href="/desktop-reports/blog/">← All posts</a></article></main><footer class="site-footer"><div class="inner footer-inner"><span></span><a class="gh-link" href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></footer></body></html>

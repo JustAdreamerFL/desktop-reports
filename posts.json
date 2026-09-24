@@ -15,6 +15,21 @@
     "version": "1.9.0"
   },
   {
+    "slug": "plasma-68-rc-what-changed",
+    "title": "KDE Plasma 6.8 RC: what changed since the beta",
+    "description": "The release candidate (Beta 2, versioned 6.7.91) is out, the feature freeze is in effect, and the final release lands October 14. Here is everything that changed since the beta, including the Union QtWidgets preview, a KWin memory leak fix, and dozens of polishing touches.",
+    "pubDate": "2026-09-24T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "desktop-environment",
+      "wayland",
+      "release-notes",
+      "feature-freeze"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.8"
+  },
+  {
     "slug": "gnome-51-0-final-release",
     "title": "GNOME 51 \"A Coruña\": the final release",
     "description": "GNOME 51.0 is out. The beta we previewed in August has shipped, with cross-GPU scan-out, custom pointer acceleration profiles, and a final batch of bug fixes added since the freeze report.",

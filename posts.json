@@ -1,5 +1,18 @@
 [
   {
+    "slug": "ubuntu-26-10",
+    "title": "Ubuntu 26.10 Stonking Stingray: what actually changed",
+    "description": "The October 2026 interim release ships Linux 7.3, GNOME 51, completes the Rust coreutils migration, and introduces Myna local speech-to-text. Nine months of support, until July 2027.",
+    "pubDate": "2026-10-19T00:00:00.000Z",
+    "tags": [
+      "ubuntu",
+      "distro",
+      "release-notes"
+    ],
+    "distro": "Ubuntu",
+    "version": "26.10"
+  },
+  {
     "slug": "cosmic-epoch-1-9-0-what-changed",
     "title": "COSMIC Epoch 1.9.0: what actually changed since 1.8.0",
     "description": "System76 tagged a coordinated submodule bump that adds two new modules to the epoch: cosmic-osk, the on-screen keyboard, and cosmic-viewer, the image viewer. git-lfs becomes a required dependency.",

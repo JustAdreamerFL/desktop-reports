@@ -1,5 +1,19 @@
 [
   {
+    "slug": "plasma-681",
+    "title": "KDE Plasma 6.8.1: what actually changed since 6.8.0",
+    "description": "A bugfix update that landed six days after 6.8.0. Kwin gets the bulk of the fixes: pointer constraints, slowkeys, color pipelines, and suspend handling. Plasma Desktop and Workspace pick up smaller corrections.",
+    "pubDate": "2026-10-20T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.8.1"
+  },
+  {
     "slug": "ubuntu-26-10",
     "title": "Ubuntu 26.10 Stonking Stingray: what actually changed",
     "description": "The October 2026 interim release ships Linux 7.3, GNOME 51, completes the Rust coreutils migration, and introduces Myna local speech-to-text. Nine months of support, until July 2027.",

@@ -1,5 +1,19 @@
 [
   {
+    "slug": "plasma-682",
+    "title": "KDE Plasma 6.8.2: what actually changed since 6.8.1",
+    "description": "The second stable 6.8 update disables troublesome Wayland commit timing, fixes multi-GPU rendering and Sticky Keys, and repairs desktop widgets. Remote desktop, Discover, and the login manager also get corrections.",
+    "pubDate": "2026-10-27T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.8.2"
+  },
+  {
     "slug": "plasma-681",
     "title": "KDE Plasma 6.8.1: what actually changed since 6.8.0",
     "description": "A bugfix update that landed six days after 6.8.0. Kwin gets the bulk of the fixes: pointer constraints, slowkeys, color pipelines, and suspend handling. Plasma Desktop and Workspace pick up smaller corrections.",

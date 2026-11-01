@@ -13,6 +13,20 @@
     "version": "2026.11.01"
   },
   {
+    "slug": "budgie-10-10-4",
+    "title": "Budgie 10.10.4: what actually changed since 10.10.3",
+    "description": "A stable fourth minor release of the 10.10 series. Panel auto-hide and dock mode finally work on Wayland, Raven gets keyboard view switching, panels get a show shortcut, and a long list of panel, Crystal Dock, and labwc bugs get fixed.",
+    "pubDate": "2026-11-01T00:00:00.000Z",
+    "tags": [
+      "budgie",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "Budgie",
+    "version": "10.10.4"
+  },
+  {
     "slug": "plasma-682",
     "title": "KDE Plasma 6.8.2: what actually changed since 6.8.1",
     "description": "The second stable 6.8 update disables troublesome Wayland commit timing, fixes multi-GPU rendering and Sticky Keys, and repairs desktop widgets. Remote desktop, Discover, and the login manager also get corrections.",

@@ -1,5 +1,18 @@
 [
   {
+    "slug": "arch-2026-11-01",
+    "title": "Arch Linux 2026.11.01: the November ISO in plain language",
+    "description": "Monthly snapshot built around Linux 7.2.11, still carrying Archinstall 4.5, plus the PHP RCE and compromised-CA security fixes that landed in October. Existing systems need only pacman -Syu.",
+    "pubDate": "2026-11-01T00:00:00.000Z",
+    "tags": [
+      "arch",
+      "distro",
+      "release-notes"
+    ],
+    "distro": "Arch Linux",
+    "version": "2026.11.01"
+  },
+  {
     "slug": "plasma-682",
     "title": "KDE Plasma 6.8.2: what actually changed since 6.8.1",
     "description": "The second stable 6.8 update disables troublesome Wayland commit timing, fixes multi-GPU rendering and Sticky Keys, and repairs desktop widgets. Remote desktop, Discover, and the login manager also get corrections.",

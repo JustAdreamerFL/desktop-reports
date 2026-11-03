@@ -1,5 +1,18 @@
 [
   {
+    "slug": "fedora-45",
+    "title": "Fedora Linux 45: what actually changed",
+    "description": "Fedora 45 went GA on November 3, 2026 after two postponements. It ships GNOME 51, KDE Plasma 6.8, Linux 7.2, and a long list of system-wide changes: kmscon as the VT console, enforced RPM signature checking, oo7 secret storage, Stratis in Anaconda, Podman 6, and more.",
+    "pubDate": "2026-11-03T00:00:00.000Z",
+    "tags": [
+      "fedora",
+      "distro",
+      "release-notes"
+    ],
+    "distro": "Fedora",
+    "version": "45"
+  },
+  {
     "slug": "arch-2026-11-01",
     "title": "Arch Linux 2026.11.01: the November ISO in plain language",
     "description": "Monthly snapshot built around Linux 7.2.11, still carrying Archinstall 4.5, plus the PHP RCE and compromised-CA security fixes that landed in October. Existing systems need only pacman -Syu.",

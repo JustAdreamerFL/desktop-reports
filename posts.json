@@ -1,5 +1,19 @@
 [
   {
+    "slug": "cinnamon-680",
+    "title": "Cinnamon 6.8.0: what actually changed",
+    "description": "Cinnamon 6.8 brings finger-tracking gestures, per-monitor backgrounds and a Wayland session without the experimental label. The release also changes input methods, notifications and the lock screen, with limits worth checking before switching sessions.",
+    "pubDate": "2026-11-04T00:00:00.000Z",
+    "tags": [
+      "cinnamon",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "Cinnamon",
+    "version": "6.8.0"
+  },
+  {
     "slug": "fedora-45",
     "title": "Fedora Linux 45: what actually changed",
     "description": "Fedora 45 went GA on November 3, 2026 after two postponements. It ships GNOME 51, KDE Plasma 6.8, Linux 7.2, and a long list of system-wide changes: kmscon as the VT console, enforced RPM signature checking, oo7 secret storage, Stratis in Anaconda, Podman 6, and more.",

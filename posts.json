@@ -1,5 +1,19 @@
 [
   {
+    "slug": "plasma-683",
+    "title": "KDE Plasma 6.8.3: what actually changed since 6.8.2",
+    "description": "The third stable 6.8 update repairs multi-GPU workarounds, screencast frame pacing, and a suspend delay. Desktop focus, panel cloning, screenshots, and everyday widgets also get fixes.",
+    "pubDate": "2026-11-10T00:00:00.000Z",
+    "tags": [
+      "plasma",
+      "desktop-environment",
+      "wayland",
+      "release-notes"
+    ],
+    "distro": "KDE Plasma",
+    "version": "6.8.3"
+  },
+  {
     "slug": "cinnamon-680",
     "title": "Cinnamon 6.8.0: what actually changed",
     "description": "Cinnamon 6.8 brings finger-tracking gestures, per-monitor backgrounds and a Wayland session without the experimental label. The release also changes input methods, notifications and the lock screen, with limits worth checking before switching sessions.",

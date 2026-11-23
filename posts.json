@@ -1,5 +1,19 @@
 [
   {
+    "slug": "debian-13-8",
+    "title": "Debian 13.8: what actually changed",
+    "description": "The eighth trixie point release landed on November 21, 2026. It folds in a large batch of security fixes, a GRUB Secure Boot fix, fresh Intel microcode, glibc corrections, and an installer kernel bump. Here is the concrete list.",
+    "pubDate": "2026-11-24T00:00:00.000Z",
+    "tags": [
+      "debian",
+      "distro",
+      "release-notes",
+      "trixie"
+    ],
+    "distro": "Debian",
+    "version": "13.8"
+  },
+  {
     "slug": "cinnamon-684",
     "title": "Cinnamon 6.8.4: what actually changed",
     "description": "A small stable point release from November 20 that fixes modal dialogs closing too early, workspace switches that never finished, and a lock screen that showed the default avatar. It also brings a round of translation regeneration.",

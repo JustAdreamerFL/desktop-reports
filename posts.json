@@ -14,6 +14,20 @@
     "version": "13.8"
   },
   {
+    "slug": "flatpak-1194",
+    "title": "Flatpak 1.19.4: what actually changed",
+    "description": "A beta development prerelease with two security fixes, COSMIC applet desktop keys, and new search filters. It also absorbs the withdrawn 1.19.3 tag, so this is the first usable release of that batch.",
+    "pubDate": "2026-11-24T00:00:00.000Z",
+    "tags": [
+      "flatpak",
+      "application-sandboxing",
+      "security",
+      "feature-freeze"
+    ],
+    "distro": "Flatpak",
+    "version": "1.19.4"
+  },
+  {
     "slug": "cinnamon-684",
     "title": "Cinnamon 6.8.4: what actually changed",
     "description": "A small stable point release from November 20 that fixes modal dialogs closing too early, workspace switches that never finished, and a lock screen that showed the default avatar. It also brings a round of translation regeneration.",

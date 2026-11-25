@@ -1,5 +1,20 @@
 [
   {
+    "slug": "cosmic-1-12-0",
+    "title": "COSMIC Epoch 1.12.0: what actually changed since 1.11.0",
+    "description": "System76 tagged Epoch 1.12.0 on November 24 with an empty release body. The real changes are in the submodule commits: theme bundles, a pointer size setting, Xwayland controls, and a batch of a11y and security fixes.",
+    "pubDate": "2026-11-25T00:00:00.000Z",
+    "tags": [
+      "cosmic",
+      "desktop-environment",
+      "wayland",
+      "rust",
+      "release-notes"
+    ],
+    "distro": "COSMIC",
+    "version": "1.12.0"
+  },
+  {
     "slug": "debian-13-8",
     "title": "Debian 13.8: what actually changed",
     "description": "The eighth trixie point release landed on November 21, 2026. It folds in a large batch of security fixes, a GRUB Secure Boot fix, fresh Intel microcode, glibc corrections, and an installer kernel bump. Here is the concrete list.",

@@ -6,10 +6,10 @@
 <p>CVE-2026-133845 is rated high and affects anyone running a malicious or compromised Flatpak app. If the third argument to the portal’s <code>Spawn()</code> call maps two file descriptors to the same handle, <code>dup2()</code> fails. That failure was not handled, so a descriptor open inside <code>flatpak-portal</code> ended up in the subsandbox. Predicting the number of the unfiltered D-Bus session bus descriptor is enough to escape the sandbox completely. The immediate mitigation exits the child process when fd mapping fails (f107d8a). The thorough fix adds a <code>FlatpakUniqueFDList</code> so one descriptor cannot be used twice (b1b596e, a7b55f8, with 07b007e renaming the old variables). Reported by refi64 and independently rediscovered by oz9un, with fixes from refi64 and Simon McVittie.</p>
 <p>Both are fixed in the stable 1.18.6 release as well. The advisories note that the 1.19.3 and 1.18.5 tags contained the fixes but their release process failed, so 1.19.4 and 1.18.6 are the tags to use. Backports exist on the flatpak-1.16.x branch for distributions such as Debian 13, though upstream will not publish a formal release from it.</p>
 <h3 id="the-command-line-loses-a-flag-and-gains-search-filters">The command line loses a flag and gains search filters</h3>
-<p><code>flatpak update --force-remove</code> is gone (#6915). It had no effect, so the only visible change is that scripts still passing it now get an error. That is the incompatible command line change in this release.</p>
-<p><code>flatpak search</code> gains <code>--app</code> and <code>--runtime</code> (#6718, implemented in #6902), matching filters <code>flatpak list</code> already had. So <code>flatpak search --app game</code> looks only at applications, and <code>flatpak search --runtime org.gnome</code> limits results to runtimes. Searches with many matches are faster too (#6892).</p>
+<p><code>flatpak update --force-remove</code> is gone (<a href="https://github.com/flatpak/flatpak/issues/6915">Flatpak issue 6915</a>). It had no effect, so the only visible change is that scripts still passing it now get an error. That is the incompatible command line change in this release.</p>
+<p><code>flatpak search</code> gains <code>--app</code> and <code>--runtime</code> (<a href="https://github.com/flatpak/flatpak/issues/6718">Flatpak issue 6718</a>, implemented in <a href="https://github.com/flatpak/flatpak/issues/6902">Flatpak issue 6902</a>), matching filters <code>flatpak list</code> already had. So <code>flatpak search --app game</code> looks only at applications, and <code>flatpak search --runtime org.gnome</code> limits results to runtimes. Searches with many matches are faster too (<a href="https://github.com/flatpak/flatpak/issues/6892">Flatpak issue 6892</a>).</p>
 <h3 id="cosmic-applets-can-export-their-desktop-keys">COSMIC applets can export their desktop keys</h3>
-<p>PR #6865 adds five COSMIC keys to the allowlist Flatpak applies to exported <code>.desktop</code> files. Without this, those fields were stripped from sandboxed apps. The keys and what they do:</p>
+<p>PR <a href="https://github.com/flatpak/flatpak/pull/6865">Flatpak PR 6865</a> adds five COSMIC keys to the allowlist Flatpak applies to exported <code>.desktop</code> files. Without this, those fields were stripped from sandboxed apps. The keys and what they do:</p>
 <ul>
 <li><code>X-CosmicApplet</code> marks an applet for the settings app and the panel.</li>
 <li><code>X-CosmicHoverPopup</code> asks for a popup on hover when another applet already has one open.</li>
@@ -17,61 +17,61 @@
 <li><code>X-CosmicOverflowMinSize</code> sets the minimum size of a shrinkable applet in applet size units.</li>
 <li><code>X-CosmicShrinkable</code> marks a window whose panel padding can shrink so it takes less space.</li>
 </ul>
-<p>Who it affects: COSMIC users and anyone packaging a COSMIC applet as a Flatpak. The pull request carried a needs-backport label, and the stable-series backport was still open as #6936 at release time.</p>
+<p>Who it affects: COSMIC users and anyone packaging a COSMIC applet as a Flatpak. The pull request carried a needs-backport label, and the stable-series backport was still open as <a href="https://github.com/flatpak/flatpak/issues/6936">Flatpak issue 6936</a> at release time.</p>
 <h3 id="fonts-and-sandbox-restrictions">Fonts and sandbox restrictions</h3>
-<p>Both <code>~/.local/share/fonts</code> and the legacy <code>~/.fonts</code> are available inside the sandbox when both exist (#5675, #6869). Previously an app could not see font files placed in the older path. Apps started with <code>--no-session-bus</code> or <code>--no-a11y-bus</code> now pass the same restriction to the subsandboxes they create (#6968), closing a gap where a child sandbox regained bus access its parent had given up.</p>
+<p>Both <code>~/.local/share/fonts</code> and the legacy <code>~/.fonts</code> are available inside the sandbox when both exist (<a href="https://github.com/flatpak/flatpak/issues/5675">Flatpak issue 5675</a>, <a href="https://github.com/flatpak/flatpak/issues/6869">Flatpak issue 6869</a>). Previously an app could not see font files placed in the older path. Apps started with <code>--no-session-bus</code> or <code>--no-a11y-bus</code> now pass the same restriction to the subsandboxes they create (<a href="https://github.com/flatpak/flatpak/issues/6968">Flatpak issue 6968</a>), closing a gap where a child sandbox regained bus access its parent had given up.</p>
 <h2 id="smaller-changes">Smaller changes</h2>
 <h3 id="performance-and-internals">Performance and internals</h3>
 <ul>
-<li>Time-remaining estimates during install are more accurate (#6732).</li>
-<li>Truncated and dropped HTTP downloads are retried (#6881), so a flaky connection is less likely to fail an install.</li>
-<li><code>flatpak enter</code> picks the smallest process ID when matching by name (#6878), which is more likely to be the main instance.</li>
-<li><code>flatpak uninstall --unused</code> avoids removing pinned runtimes and extensions (#6859).</li>
-<li>GPU-rendered terminal emulators no longer flicker (#6959).</li>
+<li>Time-remaining estimates during install are more accurate (<a href="https://github.com/flatpak/flatpak/issues/6732">Flatpak issue 6732</a>).</li>
+<li>Truncated and dropped HTTP downloads are retried (<a href="https://github.com/flatpak/flatpak/issues/6881">Flatpak issue 6881</a>), so a flaky connection is less likely to fail an install.</li>
+<li><code>flatpak enter</code> picks the smallest process ID when matching by name (<a href="https://github.com/flatpak/flatpak/issues/6878">Flatpak issue 6878</a>), which is more likely to be the main instance.</li>
+<li><code>flatpak uninstall --unused</code> avoids removing pinned runtimes and extensions (<a href="https://github.com/flatpak/flatpak/issues/6859">Flatpak issue 6859</a>).</li>
+<li>GPU-rendered terminal emulators no longer flicker (<a href="https://github.com/flatpak/flatpak/issues/6959">Flatpak issue 6959</a>).</li>
 </ul>
 <h3 id="visual-polish-and-output">Visual polish and output</h3>
 <ul>
-<li>App IDs are no longer ellipsized by default (#4719), and AppStream summaries fold onto one line (#6132), which makes long output easier to read.</li>
-<li>Agreement titles are no longer shown as though they were the app’s name (#6965).</li>
+<li>App IDs are no longer ellipsized by default (<a href="https://github.com/flatpak/flatpak/issues/4719">Flatpak issue 4719</a>), and AppStream summaries fold onto one line (<a href="https://github.com/flatpak/flatpak/issues/6132">Flatpak issue 6132</a>), which makes long output easier to read.</li>
+<li>Agreement titles are no longer shown as though they were the app’s name (<a href="https://github.com/flatpak/flatpak/issues/6965">Flatpak issue 6965</a>).</li>
 </ul>
 <h3 id="developer-tools-and-documentation">Developer tools and documentation</h3>
 <ul>
-<li>Command line completion is improved (#6759) and faster (#6325).</li>
-<li>API documentation received a round of fixes (#6890, #6914, #6912, #6963).</li>
-<li><code>flatpak override</code> precedence is documented (#6478), as is <code>flatpak build --readonly</code> (#6966) and how to clear a remote subset filter (#5637).</li>
+<li>Command line completion is improved (<a href="https://github.com/flatpak/flatpak/issues/6759">Flatpak issue 6759</a>) and faster (<a href="https://github.com/flatpak/flatpak/issues/6325">Flatpak issue 6325</a>).</li>
+<li>API documentation received a round of fixes (<a href="https://github.com/flatpak/flatpak/issues/6890">Flatpak issue 6890</a>, <a href="https://github.com/flatpak/flatpak/issues/6914">Flatpak issue 6914</a>, <a href="https://github.com/flatpak/flatpak/issues/6912">Flatpak issue 6912</a>, <a href="https://github.com/flatpak/flatpak/issues/6963">Flatpak issue 6963</a>).</li>
+<li><code>flatpak override</code> precedence is documented (<a href="https://github.com/flatpak/flatpak/issues/6478">Flatpak issue 6478</a>), as is <code>flatpak build --readonly</code> (<a href="https://github.com/flatpak/flatpak/issues/6966">Flatpak issue 6966</a>) and how to clear a remote subset filter (<a href="https://github.com/flatpak/flatpak/issues/5637">Flatpak issue 5637</a>).</li>
 </ul>
 <h3 id="translations">Translations</h3>
 <p>Translation updates shipped for pl, pt_BR, sl and zh_CN.</p>
 <h2 id="bug-fixes">Bug fixes</h2>
 <h3 id="sandbox-and-portal">Sandbox and portal</h3>
 <ul>
-<li>OCI repositories no longer report up-to-date refs as having updates available (#6874).</li>
-<li>The missing <code>SpawnStarted</code> signal from the portal when <code>SPAWN_NOTIFY</code> is used is restored (#6864).</li>
-<li>GIO warnings while accessing the system repository are gone (#6413, #6766).</li>
-<li>Unusual <code>WAYLAND_DISPLAY</code> values are handled (#6970).</li>
-<li><code>flatpak install --or-update</code> and <code>--reinstall</code> are no longer ignored when used with <code>.flatpakref</code> files (5460).</li>
-<li>Propagation of the <code>gpg-verify</code> option is fixed so a <code>.flatpakrepo</code> file can disable GPG verification (#6934).</li>
-<li>Trailing slashes in <code>--persist</code> paths are ignored, so the persistent directory mounts where intended (#1469).</li>
-<li><code>flatpak-coredumpctl</code> returns early if the selected process is not a Flatpak app (#6975).</li>
+<li>OCI repositories no longer report up-to-date refs as having updates available (<a href="https://github.com/flatpak/flatpak/issues/6874">Flatpak issue 6874</a>).</li>
+<li>The missing <code>SpawnStarted</code> signal from the portal when <code>SPAWN_NOTIFY</code> is used is restored (<a href="https://github.com/flatpak/flatpak/issues/6864">Flatpak issue 6864</a>).</li>
+<li>GIO warnings while accessing the system repository are gone (<a href="https://github.com/flatpak/flatpak/issues/6413">Flatpak issue 6413</a>, <a href="https://github.com/flatpak/flatpak/issues/6766">Flatpak issue 6766</a>).</li>
+<li>Unusual <code>WAYLAND_DISPLAY</code> values are handled (<a href="https://github.com/flatpak/flatpak/issues/6970">Flatpak issue 6970</a>).</li>
+<li><code>flatpak install --or-update</code> and <code>--reinstall</code> are no longer ignored when used with <code>.flatpakref</code> files (<a href="https://github.com/flatpak/flatpak/issues/5460">Flatpak issue 5460</a>).</li>
+<li>Propagation of the <code>gpg-verify</code> option is fixed so a <code>.flatpakrepo</code> file can disable GPG verification (<a href="https://github.com/flatpak/flatpak/issues/6934">Flatpak issue 6934</a>).</li>
+<li>Trailing slashes in <code>--persist</code> paths are ignored, so the persistent directory mounts where intended (<a href="https://github.com/flatpak/flatpak/issues/1469">Flatpak issue 1469</a>).</li>
+<li><code>flatpak-coredumpctl</code> returns early if the selected process is not a Flatpak app (<a href="https://github.com/flatpak/flatpak/issues/6975">Flatpak issue 6975</a>).</li>
 </ul>
 <h3 id="command-line-and-remotes">Command line and remotes</h3>
 <ul>
-<li><code>flatpak remote-ls</code> works with a non-default <code>--arch</code> (#3805).</li>
-<li>An assertion failure in <code>flatpak remote-info</code> when optional metadata is missing is fixed (#6945).</li>
-<li><code>flatpak search</code> no longer crashes on AppStream components with no name (#6958).</li>
-<li><code>flatpak run</code> no longer crashes when the GPG agent socket cannot be found (#6969).</li>
-<li>Apps missing from native sideload repository listings are back (#6939).</li>
-<li><code>flatpak update --no-pull</code> no longer pulls updated AppStream metadata (#5163).</li>
-<li>The default branch for an app in a specific installation is no longer affected by the default branch in another installation, and a runtime shell uses the copy from the selected installation (#6917).</li>
+<li><code>flatpak remote-ls</code> works with a non-default <code>--arch</code> (<a href="https://github.com/flatpak/flatpak/issues/3805">Flatpak issue 3805</a>).</li>
+<li>An assertion failure in <code>flatpak remote-info</code> when optional metadata is missing is fixed (<a href="https://github.com/flatpak/flatpak/issues/6945">Flatpak issue 6945</a>).</li>
+<li><code>flatpak search</code> no longer crashes on AppStream components with no name (<a href="https://github.com/flatpak/flatpak/issues/6958">Flatpak issue 6958</a>).</li>
+<li><code>flatpak run</code> no longer crashes when the GPG agent socket cannot be found (<a href="https://github.com/flatpak/flatpak/issues/6969">Flatpak issue 6969</a>).</li>
+<li>Apps missing from native sideload repository listings are back (<a href="https://github.com/flatpak/flatpak/issues/6939">Flatpak issue 6939</a>).</li>
+<li><code>flatpak update --no-pull</code> no longer pulls updated AppStream metadata (<a href="https://github.com/flatpak/flatpak/issues/5163">Flatpak issue 5163</a>).</li>
+<li>The default branch for an app in a specific installation is no longer affected by the default branch in another installation, and a runtime shell uses the copy from the selected installation (<a href="https://github.com/flatpak/flatpak/issues/6917">Flatpak issue 6917</a>).</li>
 </ul>
 <h3 id="libraries-and-build">Libraries and build</h3>
 <ul>
-<li>Memory leak fixes (#6863, #6930).</li>
-<li>Some tests now pass when bubblewrap is unavailable, and a test race condition is removed (#6963).</li>
-<li>Test coverage and internal test infrastructure improved (#6931, #6932, #6938, #6919, #6980).</li>
+<li>Memory leak fixes (<a href="https://github.com/flatpak/flatpak/issues/6863">Flatpak issue 6863</a>, <a href="https://github.com/flatpak/flatpak/issues/6930">Flatpak issue 6930</a>).</li>
+<li>Some tests now pass when bubblewrap is unavailable, and a test race condition is removed (<a href="https://github.com/flatpak/flatpak/issues/6963">Flatpak issue 6963</a>).</li>
+<li>Test coverage and internal test infrastructure improved (<a href="https://github.com/flatpak/flatpak/issues/6931">Flatpak issue 6931</a>, <a href="https://github.com/flatpak/flatpak/issues/6932">Flatpak issue 6932</a>, <a href="https://github.com/flatpak/flatpak/issues/6938">Flatpak issue 6938</a>, <a href="https://github.com/flatpak/flatpak/issues/6919">Flatpak issue 6919</a>, <a href="https://github.com/flatpak/flatpak/issues/6980">Flatpak issue 6980</a>).</li>
 </ul>
 <h2 id="still-in-flight">Still in flight</h2>
-<p>Flatpak publishes the 1.19 series as rolling development prereleases and has not announced a feature freeze date, so there is no formal list of proposed features waiting for a later 1.19.x tag. Everything in the 1.19.4 notes is merged and published; there is no hidden batch of finished work behind this tag. Two things are genuinely still open. The first stable release from this branch, 1.20.0, has not been tagged. The COSMIC desktop key change carries a needs-backport label, and its stable-series backport was still open in #6936, so 1.18.x users will not get it in 1.18.6. Anything else that lands before 1.20.0 will arrive in a later point release, and I would not assume any particular feature will make it.</p>
+<p>Flatpak publishes the 1.19 series as rolling development prereleases and has not announced a feature freeze date, so there is no formal list of proposed features waiting for a later 1.19.x tag. Everything in the 1.19.4 notes is merged and published; there is no hidden batch of finished work behind this tag. Two things are genuinely still open. The first stable release from this branch, 1.20.0, has not been tagged. The COSMIC desktop key change carries a needs-backport label, and its stable-series backport was still open in <a href="https://github.com/flatpak/flatpak/issues/6936">Flatpak issue 6936</a>, so 1.18.x users will not get it in 1.18.6. Anything else that lands before 1.20.0 will arrive in a later point release, and I would not assume any particular feature will make it.</p>
 <h2 id="known-regressions-and-deferred-work">Known regressions and deferred work</h2>
 <p>None listed yet. The 1.19.3 tag carried the same fixes but its release process failed, so anyone who picked up that tag directly should move to 1.19.4. The advisory for CVE-2026-133842 notes that exploit attempts can leave behind a directory under <code>/var/lib/flatpak/app/</code> containing a setuid executable. After the fix the <code>files/extra</code> subdirectory is locked down so non-root users cannot reach it, but that leftover directory is not cleaned up. Debian 13 users on the 1.16.x branch get backports of both fixes but no formal upstream release.</p>
 <h2 id="sources">Sources</h2>

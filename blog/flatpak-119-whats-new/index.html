@@ -17,38 +17,38 @@
 </ul>
 <p>All of these affect distributors and system administrators who package or deploy Flatpak at scale. End users benefit automatically once their distro updates the <code>flatpak</code> package, but the downgrade bypass is particularly worth flagging: it was exploitable by any local unprivileged user on multi-user systems.</p>
 <h3 id="downgrades-authenticated-via-polkit">Downgrades authenticated via polkit</h3>
-<p>The system helper can now perform system-wide downgrades authenticated through new polkit actions instead of requiring root ([#6669]). This replaces the previous behavior where downgrading a system-installed app needed root privileges. Who it affects: distribution integrators, fleet managers, and developers who need to pin or roll back system apps without granting full root access.</p>
+<p>The system helper can now perform system-wide downgrades authenticated through new polkit actions instead of requiring root (<a href="https://github.com/flatpak/flatpak/issues/6669">Flatpak issue 6669</a>). This replaces the previous behavior where downgrading a system-installed app needed root privileges. Who it affects: distribution integrators, fleet managers, and developers who need to pin or roll back system apps without granting full root access.</p>
 <h3 id="coredump-inspection">Coredump inspection</h3>
-<p>Added <code>flatpak-coredumpctl list</code> subcommand alongside Bash completion for <code>flatpak-coredumpctl</code> ([#6705], [#6678], [#6677]). Developers debugging application crashes inside sandboxes can now enumerate coredumps without leaving the flatpak tooling.</p>
+<p>Added <code>flatpak-coredumpctl list</code> subcommand alongside Bash completion for <code>flatpak-coredumpctl</code> (<a href="https://github.com/flatpak/flatpak/issues/6705">Flatpak issue 6705</a>, <a href="https://github.com/flatpak/flatpak/issues/6678">Flatpak issue 6678</a>, <a href="https://github.com/flatpak/flatpak/issues/6677">Flatpak issue 6677</a>). Developers debugging application crashes inside sandboxes can now enumerate coredumps without leaving the flatpak tooling.</p>
 <h2 id="smaller-changes">Smaller changes</h2>
 <h3 id="performance-and-internals">Performance and internals</h3>
 <ul>
-<li>Added <code>flatpak_transaction_progress_get_bytes_per_second()</code> to the library API ([#6679]), so tooling can display real-time download/progress rates.</li>
-<li>The session helper’s runtime directory is now locked to prevent systemd-tmpfiles from cleaning the p11-kit socket ([#6754]).</li>
-<li>OCI signatures are now checked from the mirrored repo in the system helper rather than fetched from the lookaside server ([#6682]), improving reliability in air-gapped or offline-mirror setups.</li>
-<li>Translation updates shipped for pt_BR ([#6701], [#6751]), sl ([#6726]), sv ([#6750]), uk ([#6715]), and zh_CN ([#6748]).</li>
+<li>Added <code>flatpak_transaction_progress_get_bytes_per_second()</code> to the library API (<a href="https://github.com/flatpak/flatpak/issues/6679">Flatpak issue 6679</a>), so tooling can display real-time download/progress rates.</li>
+<li>The session helper’s runtime directory is now locked to prevent systemd-tmpfiles from cleaning the p11-kit socket (<a href="https://github.com/flatpak/flatpak/issues/6754">Flatpak issue 6754</a>).</li>
+<li>OCI signatures are now checked from the mirrored repo in the system helper rather than fetched from the lookaside server (<a href="https://github.com/flatpak/flatpak/issues/6682">Flatpak issue 6682</a>), improving reliability in air-gapped or offline-mirror setups.</li>
+<li>Translation updates shipped for pt_BR (<a href="https://github.com/flatpak/flatpak/issues/6701">Flatpak issue 6701</a>, <a href="https://github.com/flatpak/flatpak/issues/6751">Flatpak issue 6751</a>), sl (<a href="https://github.com/flatpak/flatpak/issues/6726">Flatpak issue 6726</a>), sv (<a href="https://github.com/flatpak/flatpak/issues/6750">Flatpak issue 6750</a>), uk (<a href="https://github.com/flatpak/flatpak/issues/6715">Flatpak issue 6715</a>), and zh_CN (<a href="https://github.com/flatpak/flatpak/issues/6748">Flatpak issue 6748</a>).</li>
 </ul>
 <h3 id="developer-tools">Developer tools</h3>
 <ul>
-<li>Bash completion cleanup ([#6710]) makes the shell hints consistent across install/update/override subcommands.</li>
+<li>Bash completion cleanup (<a href="https://github.com/flatpak/flatpak/issues/6710">Flatpak issue 6710</a>) makes the shell hints consistent across install/update/override subcommands.</li>
 </ul>
 <h2 id="bug-fixes">Bug fixes</h2>
 <h3 id="sandbox-build-and-portal-integration">Sandbox, build, and portal integration</h3>
 <ul>
-<li>Fixed the portal flatpak-spawn environment handling regression ([#6721]).</li>
-<li><code>--assumeyes</code> no longer sets <code>no_interaction</code>, so credential and polkit prompts still work ([#6744]).</li>
-<li>The inverted behavior of <code>--clear-env</code> is corrected ([#6722]).</li>
-<li>Negated permission strings for <code>allow</code> and <code>share</code> run options now parse correctly ([#6684], [#6687]).</li>
-<li>File forwarding of empty paths now errors out instead of silently misbehaving ([#6693]).</li>
-<li>Build failure when exporting metainfo <code>releases.xml</code> files is resolved ([#6698]).</li>
-<li>Crashes in the portal update monitor ([#6692]) and OCI JSON handling ([#6704]) are fixed.</li>
-<li>The GI annotation for <code>flatpak_instance_get_all</code> is corrected ([#6696]).</li>
-<li>TLS certs are now applied to OCI registry requests, and stream write failures propagate to curl ([#6685]).</li>
+<li>Fixed the portal flatpak-spawn environment handling regression (<a href="https://github.com/flatpak/flatpak/issues/6721">Flatpak issue 6721</a>).</li>
+<li><code>--assumeyes</code> no longer sets <code>no_interaction</code>, so credential and polkit prompts still work (<a href="https://github.com/flatpak/flatpak/issues/6744">Flatpak issue 6744</a>).</li>
+<li>The inverted behavior of <code>--clear-env</code> is corrected (<a href="https://github.com/flatpak/flatpak/issues/6722">Flatpak issue 6722</a>).</li>
+<li>Negated permission strings for <code>allow</code> and <code>share</code> run options now parse correctly (<a href="https://github.com/flatpak/flatpak/issues/6684">Flatpak issue 6684</a>, <a href="https://github.com/flatpak/flatpak/issues/6687">Flatpak issue 6687</a>).</li>
+<li>File forwarding of empty paths now errors out instead of silently misbehaving (<a href="https://github.com/flatpak/flatpak/issues/6693">Flatpak issue 6693</a>).</li>
+<li>Build failure when exporting metainfo <code>releases.xml</code> files is resolved (<a href="https://github.com/flatpak/flatpak/issues/6698">Flatpak issue 6698</a>).</li>
+<li>Crashes in the portal update monitor (<a href="https://github.com/flatpak/flatpak/issues/6692">Flatpak issue 6692</a>) and OCI JSON handling (<a href="https://github.com/flatpak/flatpak/issues/6704">Flatpak issue 6704</a>) are fixed.</li>
+<li>The GI annotation for <code>flatpak_instance_get_all</code> is corrected (<a href="https://github.com/flatpak/flatpak/issues/6696">Flatpak issue 6696</a>).</li>
+<li>TLS certs are now applied to OCI registry requests, and stream write failures propagate to curl (<a href="https://github.com/flatpak/flatpak/issues/6685">Flatpak issue 6685</a>).</li>
 </ul>
 <h3 id="system-helper-hardening">System helper hardening</h3>
 <ul>
-<li>Remote names are validated, supplementary groups are dropped, and credentials are no longer logged ([#6722], [#6724]).</li>
-<li>Numerous crash, memory leak, integer overflow, and error-handling fixes across the system helper and core ([#6722], [#6724], [#6723], [#6713], [#6725]).</li>
+<li>Remote names are validated, supplementary groups are dropped, and credentials are no longer logged (<a href="https://github.com/flatpak/flatpak/issues/6722">Flatpak issue 6722</a>, <a href="https://github.com/flatpak/flatpak/issues/6724">Flatpak issue 6724</a>).</li>
+<li>Numerous crash, memory leak, integer overflow, and error-handling fixes across the system helper and core (<a href="https://github.com/flatpak/flatpak/issues/6722">Flatpak issue 6722</a>, <a href="https://github.com/flatpak/flatpak/issues/6724">Flatpak issue 6724</a>, <a href="https://github.com/flatpak/flatpak/issues/6723">Flatpak issue 6723</a>, <a href="https://github.com/flatpak/flatpak/issues/6713">Flatpak issue 6713</a>, <a href="https://github.com/flatpak/flatpak/issues/6725">Flatpak issue 6725</a>).</li>
 </ul>
 <h2 id="known-regressions-and-deferred-work">Known regressions and deferred work</h2>
 <p>None published yet.</p>

@@ -1,203 +1,203 @@
 <!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="icon" type="image/svg+xml" href="/desktop-reports/favicon.svg"><link rel="alternate" type="image/png" href="/desktop-reports/favicon.ico"><link rel="shortcut icon" href="/desktop-reports/favicon.svg"><meta name="color-scheme" content="dark light"><meta name="viewport" content="width=device-width, initial-scale=1.0"><!-- analytics disabled --><title>KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7 · Reports from Desktops</title><meta name="description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><link rel="canonical" href="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/"><link rel="sitemap" href="/desktop-reports/sitemap-index.xml"><link rel="alternate" type="application/rss+xml" title="Reports from Desktops" href="/desktop-reports/rss.xml"><meta property="og:site_name" content="Reports from Desktops"><meta property="og:type" content="article"><meta property="og:title" content="KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7"><meta property="og:description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><meta property="og:url" content="https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/"><meta property="og:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><meta property="article:published_time" content="2026-09-10T00:00:00.000Z"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7"><meta name="twitter:description" content="The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read."><meta name="twitter:image" content="https://justadreamerfl.github.io/desktop-reports/og.png"><script type="application/ld+json">{"@context":"https://schema.org","@type":"BlogPosting","headline":"KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7","description":"The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.","url":"https://justadreamerfl.github.io/desktop-reports/blog/plasma-68-beta-whats-new/","datePublished":"2026-09-10T00:00:00.000Z","author":{"@type":"Organization","name":"Desktop Reports Bot"}}</script><link rel="stylesheet" href="/desktop-reports/_astro/FormattedDate.Ca-S_gXc.css"></head><body><header class="site-header"><div class="inner"><a class="site-title" href="/desktop-reports">Reports from Desktops</a><nav class="site-nav"><a href="/desktop-reports/blog/">Posts</a><a href="/desktop-reports/rss.xml">RSS</a></nav><a href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub" class="gh-link-top"><svg width="18" height="18" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></header><main><article><header class="article-header"><time datetime="2026-09-10T00:00:00.000Z">September 10, 2026</time><h1>KDE Plasma 6.8 Beta: what actually changed since Plasma 6.7</h1><p class="byline">KDE Plasma 6.8</p><p class="tagline">The first beta is out, feature freeze started September 10, and the final release lands October 14. Here is everything noteworthy, everything minor, and the bug fixes worth knowing about, sorted into sections you can actually read.</p></header><div class="article-body"><p>As of September 10, 2026, Plasma 6.8 Beta 1 (versioned 6.7.90) is out. The final release is due October 14, coinciding with KDE’s 30th anniversary. The hard feature freeze and soft UI/string freeze took effect at this beta, so this covers practically the whole release: fixes and translations will still land before the final, new features will not. Beta 2 arrives September 24.</p>
 <h2 id="things-worth-your-attention">Things worth your attention</h2>
 <h3 id="window-management-and-compositor">Window management and compositor</h3>
-<p>KWin now applies shadows, rounded corners, and outlines to client-side-decorated (CSD) windows that lack their own decoration — think Steam, Discord, and Electron apps. This is handled by a new Breeze decoration option called “shadow-only decorations” (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/583">KWin MR 583</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=504225">KDE bug 504225</a>). The effect is consistent across the desktop and works on Wayland.</p>
-<p>Triple buffering is now enabled by default on NVIDIA GPUs. The bugs that blocked this in the past have been fixed, so NVIDIA users should see smoother rendering and lower latency (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9472">KWin MR 9472</a>).</p>
-<p>KWin internally uses only OpenGL ES now. The proprietary NVIDIA driver and older GPUs required this path anyway, and it turns out to be sufficient for everything KWin needs. Vulkan will replace it in a future release (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9488">KWin MR 9488</a>).</p>
+<p>KWin now applies shadows, rounded corners, and outlines to client-side-decorated (CSD) windows that lack their own decoration — think Steam, Discord, and Electron apps. This is handled by a new Breeze decoration option called “shadow-only decorations” (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/583">shadows for CSD windows</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=504225">related report</a>). The effect is consistent across the desktop and works on Wayland.</p>
+<p>Triple buffering is now enabled by default on NVIDIA GPUs. The bugs that blocked this in the past have been fixed, so NVIDIA users should see smoother rendering and lower latency (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9472">triple buffering on NVIDIA</a>).</p>
+<p>KWin internally uses only OpenGL ES now. The proprietary NVIDIA driver and older GPUs required this path anyway, and it turns out to be sufficient for everything KWin needs. Vulkan will replace it in a future release (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9488">OpenGL ES only</a>).</p>
 <p>Multi-GPU systems with external GPUs get a significant performance boost — up to 80% in some scenarios — because KWin now handles GPU selection more intelligently (zamundaaa.github.io write-up, July 2026).</p>
-<p>HDR support expanded: KWin now supports the HLG transfer function in addition to PQ (<a href="https://bugs.kde.org/show_bug.cgi?id=508817">KDE bug 508817</a>). ICC profile handling for HDR content improved (<a href="https://bugs.kde.org/show_bug.cgi?id=524038">KDE bug 524038</a>).</p>
-<p>KWin’s screenshot and screen-casting paths got faster and smoother on high-refresh-rate displays (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9756">KWin MR 9756</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=524129">KDE bug 524129</a>). Screen-casting latency dropped by one frame across the board, including the built-in RDP server (<a href="https://invent.kde.org/plasma/kpipewire/-/merge_requests/274">KPipeWire MR 274</a>).</p>
-<p>The Overview effect is slightly easier to trigger with a four-finger swipe gesture (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9486">KWin MR 9486</a>).</p>
+<p>HDR support expanded: KWin now supports the HLG transfer function in addition to PQ (<a href="https://bugs.kde.org/show_bug.cgi?id=508817">HLG transfer function</a>). ICC profile handling for HDR content improved (<a href="https://bugs.kde.org/show_bug.cgi?id=524038">HDR ICC profiles</a>).</p>
+<p>KWin’s screenshot and screen-casting paths got faster and smoother on high-refresh-rate displays (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9756">screenshot and screencast speed</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=524129">related report</a>). Screen-casting latency dropped by one frame across the board, including the built-in RDP server (<a href="https://invent.kde.org/plasma/kpipewire/-/merge_requests/274">screencast latency</a>).</p>
+<p>The Overview effect is slightly easier to trigger with a four-finger swipe gesture (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9486">four-finger swipe trigger</a>).</p>
 <h3 id="audio-recording-in-spectacle">Audio recording in Spectacle</h3>
-<p>Spectacle can now record audio during screen recordings. You can choose system audio (what the computer plays), microphone audio, or both (<a href="https://bugs.kde.org/show_bug.cgi?id=474798">KDE bug 474798</a>). This was the most-requested missing feature for screen recording and finally lands in 6.8.</p>
+<p>Spectacle can now record audio during screen recordings. You can choose system audio (what the computer plays), microphone audio, or both (<a href="https://bugs.kde.org/show_bug.cgi?id=474798">audio recording in screen recordings</a>). This was the most-requested missing feature for screen recording and finally lands in 6.8.</p>
 <h3 id="remote-desktop-improvements">Remote desktop improvements</h3>
-<p>KRDP, Plasma’s built-in RDP server, now supports bi-directional clipboard syncing (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/213">KRDP MR 213</a>). Previously only the server’s clipboard was shared one-way to the client.</p>
-<p>The RDP server can now dynamically adjust its quality level to match available network bandwidth, keeping frame rates consistent (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/238">KRDP MR 238</a>).</p>
-<p>Remote desktop sessions persist correctly across disconnects, and the System Tray icon for a severed connection now disappears as expected (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/234">KRDP MR 234</a>).</p>
-<p>A notification now appears when a pre-authorized app starts remote-controlling the system (<a href="https://bugs.kde.org/show_bug.cgi?id=571">KDE bug 571</a>).</p>
+<p>KRDP, Plasma’s built-in RDP server, now supports <a href="https://invent.kde.org/plasma/krdp/-/merge_requests/213">bi-directional clipboard syncing</a>. Previously only the server’s clipboard was shared one-way to the client.</p>
+<p>The RDP server can now <a href="https://invent.kde.org/plasma/krdp/-/merge_requests/238">dynamically adjust its quality level to match available network bandwidth</a>, keeping frame rates consistent.</p>
+<p>Remote desktop sessions persist correctly across disconnects, and the System Tray icon for a severed connection now <a href="https://invent.kde.org/plasma/krdp/-/merge_requests/234">disappears as expected</a>.</p>
+<p>A notification now appears when a pre-authorized app <a href="https://bugs.kde.org/show_bug.cgi?id=571">starts remote-controlling the system</a>.</p>
 <h3 id="lock-screen-and-authentication">Lock screen and authentication</h3>
-<p>The lock screen got a significant overhaul. You can now select which authentication method to use when multiple are available (password, fingerprint, etc.), and the button alignment is improved across languages (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3689">Plasma Desktop MR 3689</a>, <a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6542">Plasma Workspace MR 6542</a>, <a href="https://invent.kde.org/plasma/kscreenlocker/-/merge_requests/318">KScreenLocker MR 318</a>, <a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3951">Plasma Desktop MR 3951</a>).</p>
-<p>Lock screen notifications now trigger for all GPUs, not just the primary one (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9768">KWin MR 9768</a>).</p>
-<p>Auto-login works in Plasma Login Manager on distros with older systemd versions like KDE neon (<a href="https://bugs.kde.org/show_bug.cgi?id=522006">KDE bug 522006</a>).</p>
+<p>The lock screen got a significant overhaul. You can now <a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3689">select which authentication method to use</a> when multiple are available (password, fingerprint, etc.), and <a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6542">the button alignment is improved</a> across languages (<a href="https://invent.kde.org/plasma/kscreenlocker/-/merge_requests/318">authentication method selection</a>, <a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3951">button alignment</a>).</p>
+<p>Lock screen notifications now <a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9768">trigger for all GPUs</a>, not just the primary one.</p>
+<p>Auto-login works in Plasma Login Manager on distros with older systemd versions like KDE neon (<a href="https://bugs.kde.org/show_bug.cgi?id=522006">auto-login on older systemd</a>).</p>
 <h3 id="system-settings-search-in-english">System Settings search in English</h3>
-<p>When using the system in a non-English language, you can now search for System Settings pages using English keywords in KRunner and Kickoff, not just the local language (<a href="https://invent.kde.org/plasma/systemsettings/-/merge_requests/418">System Settings MR 418</a>). For example, searching “mouse” finds “Souris” on a French system.</p>
+<p>When using the system in a non-English language, you can now <a href="https://invent.kde.org/plasma/systemsettings/-/merge_requests/418">search for System Settings pages using English keywords</a> in KRunner and Kickoff, not just the local language. For example, searching “mouse” finds “Souris” on a French system.</p>
 <h3 id="wallpaper-and-theming">Wallpaper and theming</h3>
-<p>The default wallpaper changed from Waterfall to Hanabi (<a href="https://invent.kde.org/plasma/breeze/-/commit/0b1e6ce">Breeze commit 0b1e6ce</a>).</p>
-<p>SVG-based wallpapers now fully participate in the automatic dark/light wallpaper switching feature (<a href="https://bugs.kde.org/show_bug.cgi?id=519168">KDE bug 519168</a>).</p>
-<p>Wallpaper slideshows can be configured to not change automatically — you switch manually via the desktop context menu or a global shortcut (<a href="https://bugs.kde.org/show_bug.cgi?id=518669">KDE bug 518669</a>).</p>
-<p>If all wallpaper plugins are broken, missing, or misconfigured, Plasma now launches with a plain background instead of failing to start (<a href="https://bugs.kde.org/show_bug.cgi?id=524875">KDE bug 524875</a>).</p>
-<p>Union, KDE’s new CSS-based theming system, gained initial support for styling QtWidgets apps (<a href="https://invent.kde.org/plasma/union/-/merge_requests/270">Union MR 270</a>). This is a tech preview — visual glitches are expected and known. Dolphin and other QtWidgets apps can now be themed through Union, unifying theming across QtQuick and QtWidgets apps.</p>
-<p>Breeze styling for GTK4 apps’ menus and window borders improved (<a href="https://invent.kde.org/plasma/breeze-gtk/-/merge_requests/104">Breeze GTK MR 104</a>).</p>
-<p>Dark GTK2 theme detection improved, so old GTK2 apps get legible icons more reliably when using a dark color theme (<a href="https://invent.kde.org/plasma/breeze/-/merge_requests/144">Breeze MR 144</a>).</p>
+<p>The default wallpaper changed from Waterfall to Hanabi (<a href="https://invent.kde.org/plasma/breeze/-/commit/0b1e6ce">new default wallpaper</a>).</p>
+<p>SVG-based wallpapers now fully participate in the <a href="https://bugs.kde.org/show_bug.cgi?id=519168">automatic dark/light wallpaper switching feature</a>.</p>
+<p>Wallpaper slideshows can be configured to <a href="https://bugs.kde.org/show_bug.cgi?id=518669">not change automatically</a> — you switch manually via the desktop context menu or a global shortcut.</p>
+<p>If all wallpaper plugins are broken, missing, or misconfigured, Plasma now <a href="https://bugs.kde.org/show_bug.cgi?id=524875">launches with a plain background instead of failing to start</a>.</p>
+<p>Union, KDE’s new CSS-based theming system, gained <a href="https://invent.kde.org/plasma/union/-/merge_requests/270">initial support for styling QtWidgets apps</a>. This is a tech preview — visual glitches are expected and known. Dolphin and other QtWidgets apps can now be themed through Union, unifying theming across QtQuick and QtWidgets apps.</p>
+<p>Breeze styling for GTK4 apps’ menus and window borders improved (<a href="https://invent.kde.org/plasma/breeze-gtk/-/merge_requests/104">GTK4 menu and border styling</a>).</p>
+<p>Dark GTK2 theme detection improved, so old GTK2 apps get legible icons more reliably when using a dark color theme (<a href="https://invent.kde.org/plasma/breeze/-/merge_requests/144">dark GTK2 icon legibility</a>).</p>
 <h3 id="system-monitor-upgrades">System Monitor upgrades</h3>
-<p>System Monitor can now measure VRAM usage as a percentage of total VRAM, not just absolute bytes (<a href="https://invent.kde.org/plasma/ksystemstats/-/merge_requests/135">KSystemStats MR 135</a>). This mirrors how RAM usage is displayed.</p>
-<p>You can set CPU affinity for processes — pin a process to specific cores or core groups (<a href="https://invent.kde.org/frameworks/ksystemstats/-/merge_requests/420">KSystemStats MR 420</a>). This is a power-user feature for fine-tuned workload placement.</p>
-<p>The Process Table view shows fractional axis values when needed, and the tree view has better text alignment (<a href="https://bugs.kde.org/show_bug.cgi?id=521041">KDE bug 521041</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=442095">KDE bug 442095</a>).</p>
-<p>System Monitor graphs request tabular (monospaced) numerals for legends when the font supports them, improving alignment (<a href="https://invent.kde.org/frameworks/kquickcharts/-/merge_requests/109">KQuickCharts MR 109</a>).</p>
+<p>System Monitor can now <a href="https://invent.kde.org/plasma/ksystemstats/-/merge_requests/135">measure VRAM usage as a percentage of total VRAM</a>, not just absolute bytes. This mirrors how RAM usage is displayed.</p>
+<p>You can <a href="https://invent.kde.org/frameworks/ksystemstats/-/merge_requests/420">set CPU affinity for processes</a> — pin a process to specific cores or core groups. This is a power-user feature for fine-tuned workload placement.</p>
+<p>The Process Table view shows fractional axis values when needed, and the tree view has better text alignment (<a href="https://bugs.kde.org/show_bug.cgi?id=521041">fractional axis values</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=442095">text alignment</a>).</p>
+<p>System Monitor graphs request tabular (monospaced) numerals for legends when the font supports them, improving alignment (<a href="https://invent.kde.org/frameworks/kquickcharts/-/merge_requests/109">tabular numerals in legends</a>).</p>
 <h3 id="notifications-and-clipboard">Notifications and clipboard</h3>
-<p>Notifications now slide in from off-screen instead of fading in, with a more natural easing curve (<a href="https://bugs.kde.org/show_bug.cgi?id=522276">KDE bug 522276</a>). The sliding animation was refined after its initial introduction.</p>
-<p>When you copy text marked as a secret (like a password), the clipboard history UI now shows a clear warning instead of hiding the entry and leaving you wondering why nothing appeared (<a href="https://bugs.kde.org/show_bug.cgi?id=508326">KDE bug 508326</a>).</p>
-<p>The screen recording indicator only appears while recording is actually in progress, fixing cases where apps opened sessions early but started recording later (<a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/merge_requests/597">Portal MR 597</a>).</p>
-<p>The “Bouncing app icon” launch feedback animation uses a better physics model, easing curve, and higher frame rate (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9487">KWin MR 9487</a>).</p>
+<p>Notifications now slide in from off-screen instead of fading in, with a more natural easing curve (<a href="https://bugs.kde.org/show_bug.cgi?id=522276">slide-in animation</a>). The sliding animation was refined after its initial introduction.</p>
+<p>When you copy text marked as a secret (like a password), the clipboard history UI now shows a clear warning instead of hiding the entry and leaving you wondering why nothing appeared (<a href="https://bugs.kde.org/show_bug.cgi?id=508326">secret clipboard warning</a>).</p>
+<p>The screen recording indicator only appears while recording is actually in progress, fixing cases where apps opened sessions early but started recording later (<a href="https://invent.kde.org/plasma/xdg-desktop-portal-kde/-/merge_requests/597">recording indicator timing</a>).</p>
+<p>The “Bouncing app icon” launch feedback animation uses a better physics model, easing curve, and higher frame rate (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9487">bouncing icon animation</a>).</p>
 <h3 id="input-and-accessibility">Input and accessibility</h3>
-<p>The Emoji Selector updated to Unicode 17, adding new emoji like 🫨 🫪 🐦‍🔥 🏴‍☠️ (<a href="https://bugs.kde.org/show_bug.cgi?id=3849">KDE bug 3849</a>). The emoji grid now has resize controls (<a href="https://invent.kde.org/plasma/plasma-addons/-/merge_requests/3878">Plasma Addons MR 3878</a>).</p>
-<p>Press-and-hold for alternative characters now triggers after 600 ms instead of 200 ms, making accidental activation much harder (<a href="https://bugs.kde.org/show_bug.cgi?id=157">KDE bug 157</a>).</p>
+<p>The Emoji Selector updated to Unicode 17, adding new emoji like 🫨 🫪 🐦‍🔥 🏴‍☠️ (<a href="https://bugs.kde.org/show_bug.cgi?id=3849">Unicode 17 emoji</a>). The emoji grid now has resize controls (<a href="https://invent.kde.org/plasma/plasma-addons/-/merge_requests/3878">emoji grid resize controls</a>).</p>
+<p>Press-and-hold for alternative characters now triggers after 600 ms instead of 200 ms, making accidental activation much harder (<a href="https://bugs.kde.org/show_bug.cgi?id=157">press-and-hold timing</a>).</p>
 <p>Dwell clicker support landed for accessibility on Wayland — you can click by hovering without pressing a physical button (Phoronix coverage).</p>
-<p>Stylus interaction works in Overview and Custom Tiling overlays on Wayland (<a href="https://bugs.kde.org/show_bug.cgi?id=468396">KDE bug 468396</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=522677">KDE bug 522677</a>).</p>
-<p>System tray icons that open widgets now stay visible until the widget popup closes, so you can click a second time to dismiss it (<a href="https://bugs.kde.org/show_bug.cgi?id=521115">KDE bug 521115</a>).</p>
+<p>Stylus interaction works in Overview and Custom Tiling overlays on Wayland (<a href="https://bugs.kde.org/show_bug.cgi?id=468396">stylus in Overview</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=522677">stylus in Custom Tiling</a>).</p>
+<p>System tray icons that open widgets now stay visible until the widget popup closes, so you can click a second time to dismiss it (<a href="https://bugs.kde.org/show_bug.cgi?id=521115">system tray icon visibility</a>).</p>
 <h3 id="network-and-connectivity">Network and connectivity</h3>
-<p>Connecting to an enterprise Wi-Fi network for the first time takes you directly to the credential entry page (<a href="https://invent.kde.org/plasma/plasma-nm/-/merge_requests/635">Plasma NM MR 635</a>).</p>
+<p>Connecting to an enterprise Wi-Fi network for the first time takes you directly to the credential entry page (<a href="https://invent.kde.org/plasma/plasma-nm/-/merge_requests/635">enterprise Wi-Fi credentials</a>).</p>
 <p>Wireless access points can be configured to automatically select a channel in the Networks System Settings page.</p>
-<p>Bluetooth widget’s “Configure” button moved to the standard position for consistency (<a href="https://bugs.kde.org/show_bug.cgi?id=516134">KDE bug 516134</a>).</p>
-<p>StrongSwan VPN support added EAP-TTLS authentication (<a href="https://invent.kde.org/plasma/plasma-nm/-/merge_requests/636">Plasma NM MR 636</a>).</p>
-<p>Flatpak version of Microsoft Edge is now supported in Plasma Browser Integration (<a href="https://bugs.kde.org/show_bug.cgi?id=521109">KDE bug 521109</a>).</p>
+<p>Bluetooth widget’s “Configure” button moved to the standard position for consistency (<a href="https://bugs.kde.org/show_bug.cgi?id=516134">Bluetooth Configure button</a>).</p>
+<p>StrongSwan VPN support added EAP-TTLS authentication (<a href="https://invent.kde.org/plasma/plasma-nm/-/merge_requests/636">EAP-TTLS authentication</a>).</p>
+<p>Flatpak version of Microsoft Edge is now supported in Plasma Browser Integration (<a href="https://bugs.kde.org/show_bug.cgi?id=521109">Microsoft Edge Flatpak support</a>).</p>
 <h3 id="performance-and-resource-usage">Performance and resource usage</h3>
-<p>Discover’s background notifier process uses much less memory when checking for updates (<a href="https://bugs.kde.org/show_bug.cgi?id=509180">KDE bug 509180</a>).</p>
-<p>Plasma startup is slightly faster by avoiding unnecessary work when loading wallpapers (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6898">Plasma Workspace MR 6898</a>).</p>
-<p>SVG caching improved in Frameworks 6.30, increasing speed and reducing video memory usage (<a href="https://bugs.kde.org/show_bug.cgi?id=115">KDE bug 115</a>).</p>
-<p>Spectacle dropped the OpenCV dependency; blur effects are now implemented without it (<a href="https://invent.kde.org/plasma/spectacle/-/merge_requests/561">Spectacle MR 561</a>, <a href="https://invent.kde.org/libraries/kquickimageeditor/-/merge_requests/53">KQuickImageEditor MR 53</a>).</p>
-<p>Thumbnail rendering in notifications and the Activities sidebar uses fewer resources (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6966">Plasma Workspace MR 6966</a>, <a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3967">Plasma Desktop MR 3967</a>). The Trash widget also uses less memory (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3965">Plasma Desktop MR 3965</a>).</p>
-<p>Disabling a System Tray widget frees its memory immediately, not just after restart (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6983">Plasma Workspace MR 6983</a>).</p>
-<p>The clipboard’s “Keep selection and clipboard the same” setting no longer breaks multi-cell copying in LibreOffice Calc (<a href="https://bugs.kde.org/show_bug.cgi?id=505209">KDE bug 505209</a>) and no longer unnecessarily disables other settings (<a href="https://bugs.kde.org/show_bug.cgi?id=492840">KDE bug 492840</a>).</p>
+<p>Discover’s background notifier process uses much less memory when checking for updates (<a href="https://bugs.kde.org/show_bug.cgi?id=509180">notifier memory use</a>).</p>
+<p>Plasma startup is slightly faster by avoiding unnecessary work when loading wallpapers (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6898">wallpaper loading work</a>).</p>
+<p>SVG caching improved in Frameworks 6.30, increasing speed and reducing video memory usage (<a href="https://bugs.kde.org/show_bug.cgi?id=115">SVG caching</a>).</p>
+<p>Spectacle dropped the OpenCV dependency; blur effects are now implemented without it (<a href="https://invent.kde.org/plasma/spectacle/-/merge_requests/561">OpenCV removal</a>, <a href="https://invent.kde.org/libraries/kquickimageeditor/-/merge_requests/53">blur effects without OpenCV</a>).</p>
+<p>Thumbnail rendering in notifications and the Activities sidebar uses fewer resources (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6966">notification thumbnails</a>, <a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3967">Activities sidebar thumbnails</a>). The Trash widget also uses less memory (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3965">Trash widget memory</a>).</p>
+<p>Disabling a System Tray widget frees its memory immediately, not just after restart (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6983">System Tray memory release</a>).</p>
+<p>The clipboard’s “Keep selection and clipboard the same” setting no longer breaks multi-cell copying in LibreOffice Calc (<a href="https://bugs.kde.org/show_bug.cgi?id=505209">multi-cell copying</a>) and no longer unnecessarily disables other settings (<a href="https://bugs.kde.org/show_bug.cgi?id=492840">other clipboard settings</a>).</p>
 <h3 id="calendar-and-clock">Calendar and clock</h3>
-<p>Digital Clock widget text for calendar events is now fully selectable (<a href="https://bugs.kde.org/show_bug.cgi?id=433668">KDE bug 433668</a>).</p>
-<p>Digital Clock requests tabular numerals, preventing width changes as time passes (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6797">Plasma Workspace MR 6797</a>).</p>
-<p>The Digital Clock tooltip expands to fit long text instead of overflowing (<a href="https://bugs.kde.org/show_bug.cgi?id=6950">KDE bug 6950</a>).</p>
+<p>Digital Clock widget text for calendar events is now fully selectable (<a href="https://bugs.kde.org/show_bug.cgi?id=433668">selectable event text</a>).</p>
+<p>Digital Clock requests tabular numerals, preventing width changes as time passes (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6797">tabular numerals</a>).</p>
+<p>The Digital Clock tooltip <a href="https://bugs.kde.org/show_bug.cgi?id=6950">expands to fit long text instead of overflowing</a>.</p>
 <h3 id="drawing-tablet-and-input-devices">Drawing tablet and input devices</h3>
-<p>The Drawing Tablet settings page has a less awkward dialog for configuring pen button mappings (<a href="https://bugs.kde.org/show_bug.cgi?id=524720">KDE bug 524720</a>).</p>
-<p>Amharic virtual keyboard layout added (<a href="https://invent.kde.org/plasma/plasma-keyboard/-/merge_requests/118">Plasma Keyboard MR 118</a>).</p>
+<p>The Drawing Tablet settings page has a less awkward dialog for configuring pen button mappings (<a href="https://bugs.kde.org/show_bug.cgi?id=524720">pen button dialog</a>).</p>
+<p>Amharic virtual keyboard layout added (<a href="https://invent.kde.org/plasma/plasma-keyboard/-/merge_requests/118">Amharic keyboard layout</a>).</p>
 <h3 id="system-settings-and-configuration">System Settings and configuration</h3>
-<p>You can disable autostart entries without deleting them (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6951">Plasma Workspace MR 6951</a>).</p>
-<p>The Remote Desktop System Settings page works on small/narrow window sizes like phones (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/208">KRDP MR 208</a>).</p>
-<p>Non-default settings highlighting works on the Remote Desktop page (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/232">KRDP MR 232</a>) and the Plasma Search page (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3973">Plasma Desktop MR 3973</a>).</p>
-<p>The “Report a Bug in the Current Page” feature works for pages that list a bug reporting URL even if they didn’t come from KDE (<a href="https://invent.kde.org/plasma/systemsettings/-/merge_requests/412">System Settings MR 412</a>).</p>
-<p>KWin prevents setting a resolution so low you’d break your system and be unable to recover (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9765">KWin MR 9765</a>).</p>
+<p>You can disable autostart entries without deleting them (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6951">disabling autostart entries</a>).</p>
+<p>The Remote Desktop System Settings page works on small/narrow window sizes like phones (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/208">narrow window support</a>).</p>
+<p>Non-default settings highlighting works on the Remote Desktop page (<a href="https://invent.kde.org/plasma/krdp/-/merge_requests/232">Remote Desktop highlighting</a>) and the Plasma Search page (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3973">Plasma Search highlighting</a>).</p>
+<p>The “Report a Bug in the Current Page” feature works for pages that list a bug reporting URL even if they didn’t come from KDE (<a href="https://invent.kde.org/plasma/systemsettings/-/merge_requests/412">reporting URL pages</a>).</p>
+<p>KWin prevents setting a resolution so low you’d break your system and be unable to recover (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9765">unsafe resolution prevention</a>).</p>
 <h3 id="removed-x11-session">Removed: X11 session</h3>
 <p>Plasma 6.8 drops the X11 session entirely — Wayland is now the only session. X11 applications still run via Xwayland. The X11 session will be supported by KDE into early 2027 through Plasma 6.7 bugfix releases. This is the biggest architectural change in Plasma’s 30-year history (announcement blog post, Nov 2025).</p>
 <h3 id="smaller-changes">Smaller changes</h3>
 <h4 id="visual-polish">Visual polish</h4>
 <ul>
-<li>Comboboxes in Plasma now use the active theme for their popups instead of hardcoded Breeze styling, and menu highlights no longer animate (<a href="https://invent.kde.org/plasma/libplasma/-/merge_requests/1547">Libplasma MR 1547</a>, <a href="https://invent.kde.org/plasma/libplasma/-/merge_requests/1550">Libplasma MR 1550</a>).</li>
-<li>In-window dialogs in Kirigami apps are better highlighted against window content in dark themes (<a href="https://bugs.kde.org/show_bug.cgi?id=447965">KDE bug 447965</a>).</li>
-<li>Audio Volume widget popup starts large enough to fit all content without scrolling (<a href="https://bugs.kde.org/show_bug.cgi?id=522654">KDE bug 522654</a>).</li>
-<li>Cursor feedback effects dodge screen edges so they’re always fully visible (<a href="https://bugs.kde.org/show_bug.cgi?id=498068">KDE bug 498068</a>).</li>
-<li>Menu Editor has fewer visual frames (<a href="https://invent.kde.org/plasma/kmenuedit/-/merge_requests/59">Menu Editor MR 59</a>).</li>
-<li>“CD and DVD” category in Discover renamed to “Disc Burning” to match the FreeDesktop spec (<a href="https://invent.kde.org/plasma/discover/-/merge_requests/1350">Discover MR 1350</a>).</li>
-<li>Breeze icon theme adds icons for Android app bundle files (<a href="https://bugs.kde.org/show_bug.cgi?id=508430">KDE bug 508430</a>) and Typst documents (<a href="https://bugs.kde.org/show_bug.cgi?id=554">KDE bug 554</a>).</li>
-<li>System Tray crash icons: only one sad-face icon appears when many crashes occur; clicking it shows the full list (<a href="https://bugs.kde.org/show_bug.cgi?id=420443">KDE bug 420443</a>).</li>
+<li>Comboboxes in Plasma now use the active theme for their popups instead of hardcoded Breeze styling, and menu highlights no longer animate (<a href="https://invent.kde.org/plasma/libplasma/-/merge_requests/1547">themed combobox popups</a>, <a href="https://invent.kde.org/plasma/libplasma/-/merge_requests/1550">menu highlight animation</a>).</li>
+<li>In-window dialogs in Kirigami apps are better highlighted against window content in dark themes (<a href="https://bugs.kde.org/show_bug.cgi?id=447965">dialog highlighting</a>).</li>
+<li>Audio Volume widget popup starts large enough to fit all content without scrolling (<a href="https://bugs.kde.org/show_bug.cgi?id=522654">popup sizing</a>).</li>
+<li>Cursor feedback effects dodge screen edges so they’re always fully visible (<a href="https://bugs.kde.org/show_bug.cgi?id=498068">cursor feedback visibility</a>).</li>
+<li>Menu Editor has fewer visual frames (<a href="https://invent.kde.org/plasma/kmenuedit/-/merge_requests/59">fewer visual frames</a>).</li>
+<li>“CD and DVD” category in Discover renamed to “Disc Burning” to match the FreeDesktop spec (<a href="https://invent.kde.org/plasma/discover/-/merge_requests/1350">Disc Burning category</a>).</li>
+<li>Breeze icon theme adds icons for Android app bundle files (<a href="https://bugs.kde.org/show_bug.cgi?id=508430">Android app bundle icons</a>) and Typst documents (<a href="https://bugs.kde.org/show_bug.cgi?id=554">Typst document icons</a>).</li>
+<li>System Tray crash icons: only one sad-face icon appears when many crashes occur; clicking it shows the full list (<a href="https://bugs.kde.org/show_bug.cgi?id=420443">crash icon list</a>).</li>
 </ul>
 <h4 id="developer-tools-and-internals">Developer tools and internals</h4>
 <ul>
-<li><code>showConfigurationInterface()</code> now works in Plasma scripting (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6977">Plasma Workspace MR 6977</a>).</li>
-<li>System Settings Proxy page rewritten in QML for Plasma Mobile compatibility (<a href="https://invent.kde.org/network/kio-extras/-/merge_requests/536">kio-extras MR 536</a>).</li>
+<li><code>showConfigurationInterface()</code> now works in Plasma scripting (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6977">scripting support</a>).</li>
+<li>System Settings Proxy page rewritten in QML for Plasma Mobile compatibility (<a href="https://invent.kde.org/network/kio-extras/-/merge_requests/536">Proxy page QML rewrite</a>).</li>
 <li>KGlobalAccel internals refactored: dropped X11 bits, normalized shortcut formats, improved lookups (multiple MRs).</li>
-<li>Kirigami tab bars respond to scroll and standard tab-switching shortcuts (<a href="https://invent.kde.org/frameworks/kirigami/-/merge_requests/2123">Kirigami MR 2123</a>).</li>
+<li>Kirigami tab bars respond to scroll and standard tab-switching shortcuts (<a href="https://invent.kde.org/frameworks/kirigami/-/merge_requests/2123">tab bar scroll</a>).</li>
 <li>Frameworks 6.30 requires Qt 6.11 and KDE Frameworks 6.30 (version bumps across all modules).</li>
 </ul>
 <h4 id="content-and-smaller-apps">Content and smaller apps</h4>
 <ul>
-<li>Ethiopian calendar (13-month) added to alternate calendars (<a href="https://invent.kde.org/plasma/kdeplasma-addons/-/merge_requests/1079">Plasma Addons MR 1079</a>).</li>
-<li>Nepali (Bikram Sambat) and Ethiopian calendars supported in Plasma Addons (<a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/1445c41">Addons commit 1445c41</a>, <a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/076c13a">Addons commit 076c13a</a>).</li>
-<li>Vietnamese lunar calendar shows text in Vietnamese regardless of system language (<a href="https://bugs.kde.org/show_bug.cgi?id=521787">KDE bug 521787</a>).</li>
-<li>Time zone offset calculations fixed for half-hour offsets earlier than local time (<a href="https://bugs.kde.org/show_bug.cgi?id=522037">KDE bug 522037</a>).</li>
-<li>Calendar widget no longer changes displayed date when dragged between screens (<a href="https://bugs.kde.org/show_bug.cgi?id=472360">KDE bug 472360</a>).</li>
+<li>Ethiopian calendar (13-month) added to alternate calendars (<a href="https://invent.kde.org/plasma/kdeplasma-addons/-/merge_requests/1079">Ethiopian calendar</a>).</li>
+<li>Nepali (Bikram Sambat) and Ethiopian calendars supported in Plasma Addons (<a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/1445c41">Nepali calendar</a>, <a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/076c13a">Ethiopian calendar</a>).</li>
+<li>Vietnamese lunar calendar shows text in Vietnamese regardless of system language (<a href="https://bugs.kde.org/show_bug.cgi?id=521787">Vietnamese lunar calendar</a>).</li>
+<li>Time zone offset calculations fixed for half-hour offsets earlier than local time (<a href="https://bugs.kde.org/show_bug.cgi?id=522037">half-hour time zone offsets</a>).</li>
+<li>Calendar widget no longer changes displayed date when dragged between screens (<a href="https://bugs.kde.org/show_bug.cgi?id=472360">calendar drag behavior</a>).</li>
 <li>Weather widget centers location label, improves badge positioning, uses EnvCan icon codes, and fixes layout issues (multiple MRs).</li>
-<li>Color Picker widget sizing fixes (<a href="https://bugs.kde.org/show_bug.cgi?id=522377">KDE bug 522377</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=517052">KDE bug 517052</a>).</li>
-<li>KDE Connect SMS app permissions page ported to new Forms (<a href="https://invent.kde.org/plasma/flatpak-kcm/-/commit/1c4d978">flatpak-kcm commit 1c4d978</a>).</li>
-<li>KWallet stops spamming logs in non-default configurations (<a href="https://bugs.kde.org/show_bug.cgi?id=524500">KDE bug 524500</a>).</li>
+<li>Color Picker widget sizing fixes (<a href="https://bugs.kde.org/show_bug.cgi?id=522377">widget sizing</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=517052">sizing behavior</a>).</li>
+<li>KDE Connect SMS app permissions page ported to new Forms (<a href="https://invent.kde.org/plasma/flatpak-kcm/-/commit/1c4d978">permissions page port</a>).</li>
+<li>KWallet stops spamming logs in non-default configurations (<a href="https://bugs.kde.org/show_bug.cgi?id=524500">log spam</a>).</li>
 </ul>
 <h4 id="performance-and-technical">Performance and technical</h4>
 <ul>
-<li>KWin’s “press and hold for alternative characters” implementation prioritizes app compatibility, fixing many bugs (<a href="https://bugs.kde.org/show_bug.cgi?id=152">KDE bug 152</a>).</li>
-<li>Spectacle no longer includes tooltip with image dimensions in final screenshot when accepting region by double-click (<a href="https://bugs.kde.org/show_bug.cgi?id=513715">KDE bug 513715</a>).</li>
-<li>Mic tester records at system sample rate instead of forcing 44.1 kHz (<a href="https://bugs.kde.org/show_bug.cgi?id=523693">KDE bug 523693</a>).</li>
-<li>Emulated Input protocol version 1.6 supported (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9112">KWin MR 9112</a>).</li>
-<li>KWin variable refresh rate crash on multi-monitor setups fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521909">KDE bug 521909</a>).</li>
-<li>Full-screen video playback performance improved in Chromium-based apps (<a href="https://bugs.kde.org/show_bug.cgi?id=521960">KDE bug 521960</a>).</li>
-<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes, fixing Bubblewrap sandboxing (<a href="https://bugs.kde.org/show_bug.cgi?id=521013">KDE bug 521013</a>).</li>
-<li>XWayland apps behave correctly after XWayland crashes and restarts (<a href="https://invent.kde.org/frameworks/kwindowsystem/-/merge_requests/220">KWindowSystem MR 220</a>).</li>
-<li>Task Manager hardened against maliciously-crafted .desktop files (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6817">Plasma Workspace MR 6817</a>).</li>
-<li><code>ksystemstats_intel_helper</code> hardened against path traversal (<a href="https://bugs.kde.org/show_bug.cgi?id=141">KDE bug 141</a>).</li>
+<li>KWin’s “press and hold for alternative characters” implementation prioritizes app compatibility, fixing many problems (<a href="https://bugs.kde.org/show_bug.cgi?id=152">alternative characters</a>).</li>
+<li>Spectacle no longer includes tooltip with image dimensions in final screenshot when accepting region by double-click (<a href="https://bugs.kde.org/show_bug.cgi?id=513715">dimension tooltip</a>).</li>
+<li>Mic tester records at system sample rate instead of forcing 44.1 kHz (<a href="https://bugs.kde.org/show_bug.cgi?id=523693">system sample rate</a>).</li>
+<li>Emulated Input protocol version 1.6 supported (<a href="https://invent.kde.org/plasma/kwin/-/merge_requests/9112">Emulated Input protocol</a>).</li>
+<li>KWin variable refresh rate crash on multi-monitor setups fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521909">refresh rate crash</a>).</li>
+<li>Full-screen video playback performance improved in Chromium-based apps (<a href="https://bugs.kde.org/show_bug.cgi?id=521960">video playback performance</a>).</li>
+<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes, fixing Bubblewrap sandboxing (<a href="https://bugs.kde.org/show_bug.cgi?id=521013">capability leak</a>).</li>
+<li>XWayland apps behave correctly after XWayland crashes and restarts (<a href="https://invent.kde.org/frameworks/kwindowsystem/-/merge_requests/220">XWayland restart behavior</a>).</li>
+<li>Task Manager hardened against maliciously-crafted .desktop files (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6817">malicious .desktop handling</a>).</li>
+<li><code>ksystemstats_intel_helper</code> hardened against path traversal (<a href="https://bugs.kde.org/show_bug.cgi?id=141">path traversal guard</a>).</li>
 </ul>
 <h3 id="bug-fixes">Bug fixes</h3>
 <h4 id="compositor-display-and-input">Compositor, display, and input</h4>
 <ul>
-<li>Fixed most common Plasma crash (multi-screen related) (<a href="https://bugs.kde.org/show_bug.cgi?id=500044">KDE bug 500044</a>).</li>
-<li>Fixed second-most-common crash on logout (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6973">Plasma Workspace MR 6973</a>).</li>
-<li>KWin crash on lock screen with NVIDIA GPU fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=520842">KDE bug 520842</a>).</li>
-<li>KWin crash with DisplayLink monitors fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=520361">KDE bug 520361</a>).</li>
-<li>Screens on hybrid NVIDIA/AMD laptops no longer freeze (<a href="https://bugs.kde.org/show_bug.cgi?id=521727">KDE bug 521727</a>).</li>
-<li>Shader-based KWin effects (Burn My Windows) restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521774">KDE bug 521774</a>).</li>
-<li>Color-related effects (color blindness correction, screen inversion) restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521737">KDE bug 521737</a>).</li>
-<li>Corrupted visuals on rotated screens and older AMD GPUs fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521878">KDE bug 521878</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=521764">KDE bug 521764</a>).</li>
-<li>SDR content desaturation in HDR mode fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521759">KDE bug 521759</a>).</li>
-<li>ICC profile color correctness fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522301">KDE bug 522301</a>).</li>
-<li>KWin lag/hang with poorly-optimized Proton games fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522005">KDE bug 522005</a>).</li>
-<li>Pointer movement in VMs with non-accelerated graphics fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=524280">KDE bug 524280</a>).</li>
-<li>Screens incorrectly notifying disconnect/reconnect loop after sleep fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521826">KDE bug 521826</a>).</li>
-<li>Drag-and-drop of desktop files/folders between screens restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521713">KDE bug 521713</a>).</li>
-<li>Variable refresh rate crash on multi-monitor setups fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521909">KDE bug 521909</a>).</li>
-<li>Right-to-left languages no longer prevent force-quitting processes in System Monitor (<a href="https://bugs.kde.org/show_bug.cgi?id=522233">KDE bug 522233</a>).</li>
+<li>Fixed most common Plasma crash (multi-screen related) (<a href="https://bugs.kde.org/show_bug.cgi?id=500044">most common crash</a>).</li>
+<li>Fixed second-most-common crash on logout (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6973">logout crash</a>).</li>
+<li>KWin crash on lock screen with NVIDIA GPU fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=520842">NVIDIA lock screen crash</a>).</li>
+<li>KWin crash with DisplayLink monitors fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=520361">DisplayLink crash</a>).</li>
+<li>Screens on hybrid NVIDIA/AMD laptops no longer freeze (<a href="https://bugs.kde.org/show_bug.cgi?id=521727">hybrid GPU screen freeze</a>).</li>
+<li>Shader-based KWin effects (Burn My Windows) restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521774">Burn My Windows effect</a>).</li>
+<li>Color-related effects (color blindness correction, screen inversion) restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521737">color blindness correction</a>).</li>
+<li>Corrupted visuals on rotated screens and older AMD GPUs fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521878">rotated screen visuals</a>, <a href="https://bugs.kde.org/show_bug.cgi?id=521764">older AMD visuals</a>).</li>
+<li>SDR content desaturation in HDR mode fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521759">SDR desaturation</a>).</li>
+<li>ICC profile color correctness fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522301">ICC profile colors</a>).</li>
+<li>KWin lag/hang with poorly-optimized Proton games fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522005">Proton game hang</a>).</li>
+<li>Pointer movement in VMs with non-accelerated graphics fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=524280">VM pointer movement</a>).</li>
+<li>Screens incorrectly notifying disconnect/reconnect loop after sleep fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521826">disconnect loop after sleep</a>).</li>
+<li>Drag-and-drop of desktop files/folders between screens restored (<a href="https://bugs.kde.org/show_bug.cgi?id=521713">cross-screen drag-and-drop</a>).</li>
+<li>Variable refresh rate crash on multi-monitor setups fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521909">refresh rate crash</a>).</li>
+<li>Right-to-left languages no longer prevent force-quitting processes in System Monitor (<a href="https://bugs.kde.org/show_bug.cgi?id=522233">force-quitting in RTL</a>).</li>
 </ul>
 <h4 id="login-and-sessions">Login and sessions</h4>
 <ul>
-<li>Screen locker security issue fixed: manual config to turn off screen after “don’t require password” period no longer fails to lock (<a href="https://bugs.kde.org/show_bug.cgi?id=523504">KDE bug 523504</a>).</li>
-<li>Auto-login works on older systemd versions (<a href="https://bugs.kde.org/show_bug.cgi?id=522006">KDE bug 522006</a>).</li>
-<li>Logout sound no longer delays logout more than necessary (<a href="https://bugs.kde.org/show_bug.cgi?id=491745">KDE bug 491745</a>).</li>
-<li>Wallpaper slideshows now remember last-seen wallpaper instead of restarting from first (<a href="https://bugs.kde.org/show_bug.cgi?id=512559">KDE bug 512559</a>).</li>
-<li>Activity deletion no longer crashes Plasma; switches to next activity instead (<a href="https://bugs.kde.org/show_bug.cgi?id=521124">KDE bug 521124</a>).</li>
-<li>System Monitor no longer crashes when quitting with column config dialog open (<a href="https://bugs.kde.org/show_bug.cgi?id=491000">KDE bug 491000</a>).</li>
-<li>DrKonqi crash handler no longer crashes in a loop on severely broken systems (<a href="https://bugs.kde.org/show_bug.cgi?id=524048">KDE bug 524048</a>).</li>
+<li>Screen locker security issue fixed: manual config to turn off screen after “don’t require password” period no longer fails to lock (<a href="https://bugs.kde.org/show_bug.cgi?id=523504">screen locking edge case</a>).</li>
+<li>Auto-login works on older systemd versions (<a href="https://bugs.kde.org/show_bug.cgi?id=522006">older systemd auto-login</a>).</li>
+<li>Logout sound no longer delays logout more than necessary (<a href="https://bugs.kde.org/show_bug.cgi?id=491745">logout sound delay</a>).</li>
+<li>Wallpaper slideshows now remember last-seen wallpaper instead of restarting from first (<a href="https://bugs.kde.org/show_bug.cgi?id=512559">slideshow wallpaper memory</a>).</li>
+<li>Activity deletion no longer crashes Plasma; switches to next activity instead (<a href="https://bugs.kde.org/show_bug.cgi?id=521124">activity deletion crash</a>).</li>
+<li>System Monitor no longer crashes when quitting with column config dialog open (<a href="https://bugs.kde.org/show_bug.cgi?id=491000">quit crash</a>).</li>
+<li>DrKonqi crash handler no longer crashes in a loop on severely broken systems (<a href="https://bugs.kde.org/show_bug.cgi?id=524048">crash loop</a>).</li>
 </ul>
 <h4 id="apps">Apps</h4>
 <ul>
-<li>Discover no longer gets stuck checking for updates when Snap backend present but no upgradeable Snaps (<a href="https://bugs.kde.org/show_bug.cgi?id=524077">KDE bug 524077</a>).</li>
-<li>Discover terminates all processes properly on quit (<a href="https://invent.kde.org/plasma/discover/-/merge_requests/1393">Discover MR 1393</a>).</li>
-<li>Discover remembers review usefulness ratings and doesn’t let you resubmit (<a href="https://bugs.kde.org/show_bug.cgi?id=521866">KDE bug 521866</a>).</li>
-<li>Discover only offers .deb packages on distros that support them (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3957">Plasma Desktop MR 3957</a>).</li>
-<li>Discover fixes: updates stuck when fwupd unavailable (<a href="https://bugs.kde.org/show_bug.cgi?id=521682">KDE bug 521682</a>), Snap backend signals completion correctly (<a href="https://bugs.kde.org/show_bug.cgi?id=524077">KDE bug 524077</a>), AppStream preview backend added (<a href="https://invent.kde.org/plasma/discover/-/commit/4a02b82">Discover commit 4a02b82</a>), package review usefulness persistent (<a href="https://bugs.kde.org/show_bug.cgi?id=521866">KDE bug 521866</a>).</li>
-<li>Non-KDE apps no longer crash when closing a dialog (<a href="https://bugs.kde.org/show_bug.cgi?id=523039">KDE bug 523039</a>).</li>
-<li>Calendar widget no longer shows info buttons for alerts that do nothing (<a href="https://bugs.kde.org/show_bug.cgi?id=519676">KDE bug 519676</a>).</li>
-<li>Weather widget info buttons only appear when functional (<a href="https://bugs.kde.org/show_bug.cgi?id=519676">KDE bug 519676</a>, <a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/d13f147">Addons commit d13f147</a>).</li>
-<li>Color Picker widget layout regressions fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522377">KDE bug 522377</a>).</li>
-<li>System Monitor Configure Columns popup is now a traditional window, fixing scroll glitch (<a href="https://bugs.kde.org/show_bug.cgi?id=517723">KDE bug 517723</a>).</li>
-<li>Networks widget: connecting to uneditable network no longer makes others look connected (<a href="https://bugs.kde.org/show_bug.cgi?id=461028">KDE bug 461028</a>).</li>
-<li>Audio Volume widget shows correct panel icon under unusual conditions (<a href="https://bugs.kde.org/show_bug.cgi?id=422">KDE bug 422</a>).</li>
-<li>Remote desktop connection icon disappears correctly after unexpected disconnect (<a href="https://bugs.kde.org/show_bug.cgi?id=234">KDE bug 234</a>).</li>
-<li>RDP server systemd regression fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521776">KDE bug 521776</a>).</li>
-<li>Chromium apps no longer freeze when another window forced “Keep Above Others” (<a href="https://bugs.kde.org/show_bug.cgi?id=521687">KDE bug 521687</a>).</li>
-<li>Plasma no longer crashes after ejecting audio CD from Dolphin/Audex (<a href="https://bugs.kde.org/show_bug.cgi?id=522051">KDE bug 522051</a>).</li>
-<li>Kickoff/Kicker: multiple widgets can all return search results for not-yet-installed apps (<a href="https://bugs.kde.org/show_bug.cgi?id=511220">KDE bug 511220</a>).</li>
-<li>System Settings sub-category sidebar switching fixed in less-common interaction modes (<a href="https://bugs.kde.org/show_bug.cgi?id=415">KDE bug 415</a>).</li>
-<li>Digital Clock “Today” button highlights correct day in time zones later than UTC (<a href="https://bugs.kde.org/show_bug.cgi?id=521114">KDE bug 521114</a>).</li>
-<li>Screencast permission no longer requires identical screen setup to when permission granted (<a href="https://bugs.kde.org/show_bug.cgi?id=519122">KDE bug 519122</a>).</li>
-<li>Portal dialog explanatory text shows correctly (<a href="https://bugs.kde.org/show_bug.cgi?id=584">KDE bug 584</a>).</li>
-<li>Icons-Only Task Manager no longer breaks from <code>metadata.desktop</code> in home folder (<a href="https://bugs.kde.org/show_bug.cgi?id=521247">KDE bug 521247</a>).</li>
-<li>Weather widget no longer endlessly reloads after wake from sleep (<a href="https://bugs.kde.org/show_bug.cgi?id=517280">KDE bug 517280</a>).</li>
-<li>System Monitor graphs show fractional axis values (<a href="https://bugs.kde.org/show_bug.cgi?id=521041">KDE bug 521041</a>).</li>
-<li>Un-favoriting apps with weird characters works (<a href="https://bugs.kde.org/show_bug.cgi?id=520894">KDE bug 520894</a>).</li>
-<li>Notification icon no longer gets stuck half-rotated (<a href="https://bugs.kde.org/show_bug.cgi?id=458156">KDE bug 458156</a>).</li>
-<li>Screen Locking page translated label no longer reverts to English after save (<a href="https://bugs.kde.org/show_bug.cgi?id=521293">KDE bug 521293</a>).</li>
-<li>Color Picker widget no longer overflows in Grouping widget (<a href="https://bugs.kde.org/show_bug.cgi?id=517052">KDE bug 517052</a>).</li>
-<li>Media Frame widget no longer displays every other image sharpened (<a href="https://bugs.kde.org/show_bug.cgi?id=521534">KDE bug 521534</a>).</li>
-<li>Choose Application window no longer percent-encodes filename characters (<a href="https://bugs.kde.org/show_bug.cgi?id=521748">KDE bug 521748</a>).</li>
-<li>Mouse page in System Settings no longer has layout glitches in X11 (<a href="https://bugs.kde.org/show_bug.cgi?id=521992">KDE bug 521992</a>).</li>
-<li>Networks widget Details tab text no longer overflows (<a href="https://bugs.kde.org/show_bug.cgi?id=522333">KDE bug 522333</a>).</li>
-<li>KRunner Bookmarks provider returns results for 2-char queries, uses fewer resources (<a href="https://bugs.kde.org/show_bug.cgi?id=6764">KDE bug 6764</a>).</li>
-<li>Clipboard widget Actions Configuration page margins improved (<a href="https://bugs.kde.org/show_bug.cgi?id=6779">KDE bug 6779</a>).</li>
-<li>Secret keyboard shortcut (<code>Meta</code>+<code>Ctrl</code>+<code>x</code>) for clipboard actions removed (<a href="https://bugs.kde.org/show_bug.cgi?id=6773">KDE bug 6773</a>).</li>
-<li>DrKonqi tells you when safe to close window (<a href="https://bugs.kde.org/show_bug.cgi?id=397">KDE bug 397</a>).</li>
-<li>Kameleon system service disabled by default (<a href="https://bugs.kde.org/show_bug.cgi?id=521793">KDE bug 521793</a>).</li>
-<li>Pointer with software rendering no longer disappears when panel dodges windows (<a href="https://bugs.kde.org/show_bug.cgi?id=521953">KDE bug 521953</a>).</li>
-<li>Force-quitting processes in System Monitor works with RTL languages (<a href="https://bugs.kde.org/show_bug.cgi?id=522233">KDE bug 522233</a>).</li>
+<li>Discover no longer gets stuck checking for updates when Snap backend present but no upgradeable Snaps (<a href="https://bugs.kde.org/show_bug.cgi?id=524077">Snap update check</a>).</li>
+<li>Discover terminates all processes properly on quit (<a href="https://invent.kde.org/plasma/discover/-/merge_requests/1393">process termination on quit</a>).</li>
+<li>Discover remembers review usefulness ratings and doesn’t let you resubmit (<a href="https://bugs.kde.org/show_bug.cgi?id=521866">review ratings</a>).</li>
+<li>Discover only offers .deb packages on distros that support them (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3957">.deb package support</a>).</li>
+<li>Discover fixes: updates stuck when fwupd unavailable (<a href="https://bugs.kde.org/show_bug.cgi?id=521682">fwupd unavailable</a>), Snap backend signals completion correctly (<a href="https://bugs.kde.org/show_bug.cgi?id=524077">Snap completion signal</a>), AppStream preview backend added (<a href="https://invent.kde.org/plasma/discover/-/commit/4a02b82">AppStream previews</a>), package review usefulness persistent (<a href="https://bugs.kde.org/show_bug.cgi?id=521866">review usefulness</a>).</li>
+<li>Non-KDE apps no longer crash when closing a dialog (<a href="https://bugs.kde.org/show_bug.cgi?id=523039">dialog close crash</a>).</li>
+<li>Calendar widget no longer shows info buttons for alerts that do nothing (<a href="https://bugs.kde.org/show_bug.cgi?id=519676">alert info buttons</a>).</li>
+<li>Weather widget info buttons only appear when functional (<a href="https://bugs.kde.org/show_bug.cgi?id=519676">weather info buttons</a>, <a href="https://invent.kde.org/plasma/kdeplasma-addons/-/commit/d13f147">weather widget behavior</a>).</li>
+<li>Color Picker widget layout regressions fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=522377">Color Picker layout</a>).</li>
+<li>System Monitor Configure Columns popup is now a traditional window, fixing scroll glitch (<a href="https://bugs.kde.org/show_bug.cgi?id=517723">scroll glitch</a>).</li>
+<li>Networks widget: connecting to uneditable network no longer makes others look connected (<a href="https://bugs.kde.org/show_bug.cgi?id=461028">uneditable network display</a>).</li>
+<li>Audio Volume widget shows correct panel icon under unusual conditions (<a href="https://bugs.kde.org/show_bug.cgi?id=422">panel icon</a>).</li>
+<li>Remote desktop connection icon disappears correctly after unexpected disconnect (<a href="https://bugs.kde.org/show_bug.cgi?id=234">connection icon</a>).</li>
+<li>RDP server systemd regression fixed (<a href="https://bugs.kde.org/show_bug.cgi?id=521776">systemd regression</a>).</li>
+<li>Chromium apps no longer freeze when another window forced “Keep Above Others” (<a href="https://bugs.kde.org/show_bug.cgi?id=521687">Keep Above Others freeze</a>).</li>
+<li>Plasma no longer crashes after ejecting audio CD from Dolphin/Audex (<a href="https://bugs.kde.org/show_bug.cgi?id=522051">audio CD ejection crash</a>).</li>
+<li>Kickoff/Kicker: multiple widgets can all return search results for not-yet-installed apps (<a href="https://bugs.kde.org/show_bug.cgi?id=511220">search results for uninstalled apps</a>).</li>
+<li>System Settings sub-category sidebar switching fixed in less-common interaction modes (<a href="https://bugs.kde.org/show_bug.cgi?id=415">sidebar switching</a>).</li>
+<li>Digital Clock “Today” button highlights correct day in time zones later than UTC (<a href="https://bugs.kde.org/show_bug.cgi?id=521114">Today button highlight</a>).</li>
+<li>Screencast permission no longer requires identical screen setup to when permission granted (<a href="https://bugs.kde.org/show_bug.cgi?id=519122">screencast permission</a>).</li>
+<li>Portal dialog explanatory text shows correctly (<a href="https://bugs.kde.org/show_bug.cgi?id=584">explanatory text</a>).</li>
+<li>Icons-Only Task Manager no longer breaks from <code>metadata.desktop</code> in home folder (<a href="https://bugs.kde.org/show_bug.cgi?id=521247">metadata.desktop handling</a>).</li>
+<li>Weather widget no longer endlessly reloads after wake from sleep (<a href="https://bugs.kde.org/show_bug.cgi?id=517280">widget reload</a>).</li>
+<li>System Monitor graphs show fractional axis values (<a href="https://bugs.kde.org/show_bug.cgi?id=521041">fractional axis values</a>).</li>
+<li>Un-favoriting apps with weird characters works (<a href="https://bugs.kde.org/show_bug.cgi?id=520894">unfavoriting with special characters</a>).</li>
+<li>Notification icon no longer gets stuck half-rotated (<a href="https://bugs.kde.org/show_bug.cgi?id=458156">notification icon rotation</a>).</li>
+<li>Screen Locking page translated label no longer reverts to English after save (<a href="https://bugs.kde.org/show_bug.cgi?id=521293">translated label</a>).</li>
+<li>Color Picker widget no longer overflows in Grouping widget (<a href="https://bugs.kde.org/show_bug.cgi?id=517052">widget overflow</a>).</li>
+<li>Media Frame widget no longer displays every other image sharpened (<a href="https://bugs.kde.org/show_bug.cgi?id=521534">image sharpening</a>).</li>
+<li>Choose Application window no longer percent-encodes filename characters (<a href="https://bugs.kde.org/show_bug.cgi?id=521748">filename encoding</a>).</li>
+<li>Mouse page in System Settings no longer has layout glitches in X11 (<a href="https://bugs.kde.org/show_bug.cgi?id=521992">Mouse page layout</a>).</li>
+<li>Networks widget Details tab text no longer overflows (<a href="https://bugs.kde.org/show_bug.cgi?id=522333">Details tab overflow</a>).</li>
+<li>KRunner Bookmarks provider returns results for 2-char queries, uses fewer resources (<a href="https://bugs.kde.org/show_bug.cgi?id=6764">short bookmark queries</a>).</li>
+<li>Clipboard widget Actions Configuration page margins improved (<a href="https://bugs.kde.org/show_bug.cgi?id=6779">Actions page margins</a>).</li>
+<li>Secret keyboard shortcut (<code>Meta</code>+<code>Ctrl</code>+<code>x</code>) for clipboard actions removed (<a href="https://bugs.kde.org/show_bug.cgi?id=6773">clipboard shortcut</a>).</li>
+<li>DrKonqi tells you when safe to close window (<a href="https://bugs.kde.org/show_bug.cgi?id=397">safe close notification</a>).</li>
+<li>Kameleon system service disabled by default (<a href="https://bugs.kde.org/show_bug.cgi?id=521793">Kameleon service</a>).</li>
+<li>Pointer with software rendering no longer disappears when panel dodges windows (<a href="https://bugs.kde.org/show_bug.cgi?id=521953">pointer visibility</a>).</li>
+<li>Force-quitting processes in System Monitor works with RTL languages (<a href="https://bugs.kde.org/show_bug.cgi?id=522233">force-quitting in RTL</a>).</li>
 </ul>
 <h4 id="security">Security</h4>
 <ul>
-<li>Task Manager hardened against malicious .desktop files (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6817">Plasma Workspace MR 6817</a>).</li>
-<li><code>ksystemstats_intel_helper</code> hardened against path traversal (<a href="https://bugs.kde.org/show_bug.cgi?id=141">KDE bug 141</a>).</li>
-<li>Screen locker locking logic fixed for edge-case configuration (<a href="https://bugs.kde.org/show_bug.cgi?id=523504">KDE bug 523504</a>).</li>
-<li>Flatpak background service crash fixed when allowing app update via KDE portal (<a href="https://bugs.kde.org/show_bug.cgi?id=6686">KDE bug 6686</a>).</li>
-<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes (<a href="https://bugs.kde.org/show_bug.cgi?id=521013">KDE bug 521013</a>).</li>
+<li>Task Manager hardened against malicious .desktop files (<a href="https://invent.kde.org/plasma/plasma-workspace/-/merge_requests/6817">malicious .desktop handling</a>).</li>
+<li><code>ksystemstats_intel_helper</code> hardened against path traversal (<a href="https://bugs.kde.org/show_bug.cgi?id=141">path traversal guard</a>).</li>
+<li>Screen locker locking logic fixed for edge-case configuration (<a href="https://bugs.kde.org/show_bug.cgi?id=523504">locking logic</a>).</li>
+<li>Flatpak background service crash fixed when allowing app update via KDE portal (<a href="https://bugs.kde.org/show_bug.cgi?id=6686">Flatpak service crash</a>).</li>
+<li>KWin no longer leaks <code>CAP_SYS_NICE</code> to child processes (<a href="https://bugs.kde.org/show_bug.cgi?id=521013">capability leak</a>).</li>
 </ul>
 <h4 id="libraries-and-build">Libraries and build</h4>
 <ul>
@@ -210,11 +210,11 @@
 <h3 id="known-regressions-and-deferred-work">Known regressions and deferred work</h3>
 <ul>
 <li>Union theming for QtWidgets apps has known visual glitches (acknowledged in announcement).</li>
-<li>Location-based timezone setting deferred; depends on Date &amp; Time KCM QML conversion (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3653">Plasma Desktop MR 3653</a>).</li>
+<li>Location-based timezone setting deferred; depends on Date &amp; Time KCM QML conversion (<a href="https://invent.kde.org/plasma/plasma-desktop/-/merge_requests/3653">Date &amp; Time KCM QML</a>).</li>
 <li>Some accessibility features from third-party apps may not work as well on Wayland-only session.</li>
 <li>Output mirroring issues being actively worked on.</li>
 <li>Session restore and window position memory still being improved.</li>
 </ul>
 <h2 id="sources">Sources</h2>
-<p>Official KDE announcement for Plasma 6.8 Beta: <a href="https://kde.org/announcements/plasma/6/6.7.90/">6.7.90</a>. Complete changelog from 6.7.5 to 6.7.90: <a href="https://kde.org/announcements/changelogs/plasma/6/6.7.5-6.7.90">changelog</a>. KDE Community Wiki page for Plasma 6.8 features: <a href="https://community.kde.org/Plasma/Plasma_6#Plasma_6.8">Plasma 6.8</a>. Phoronix coverage of Plasma 6.8 performance optimizations: <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-More-Performance">August 21</a> and <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-Autoscroll">triple buffering</a>. 9to5Linux preview of Plasma 6.8: <a href="https://9to5linux.com/kde-plasma-6-8-desktop-environment-is-coming-on-october-14th-heres-what-to-expect">October 14 release</a>. “This Week in Plasma” blog posts covering the 6.8 development cycle: <a href="https://blogs.kde.org/2026/07/11/this-week-in-plasma-audio-recording-in-spectacle/">Audio Recording in Spectacle</a>, <a href="https://blogs.kde.org/2026/07/04/this-week-in-plasma-better-animations/">Better Animations</a>, <a href="https://blogs.kde.org/2026/08/22/this-week-in-plasma-ui-and-performance-improvements/">UI and Performance Improvements</a>, <a href="https://blogs.kde.org/2026/08/28/this-week-in-plasma-qtwidgets-apps-join-the-union/">QtWidgets Apps Join the Union</a>, <a href="https://blogs.kde.org/2026/06/27/this-week-in-plasma-post-6.7-bug-fixing/">Post-6.7 Bug-fixing</a>, and <a href="https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/">Going all-in on a Wayland future</a>. New In Linux feature summary: <a href="https://www.newinlinux.com/these-are-the-most-exciting-features-in-plasma-6-8-so-far/">Plasma 6.8 features</a>.</p>
+<p>Official KDE announcement for Plasma 6.8 Beta: <a href="https://kde.org/announcements/plasma/6/6.7.90/">6.7.90</a>. Complete changelog from 6.7.5 to 6.7.90: <a href="https://kde.org/announcements/changelogs/plasma/6/6.7.5-6.7.90">changelog</a>. KDE Community Wiki page for Plasma 6.8 features: <a href="https://community.kde.org/Plasma/Plasma_6#Plasma_6.8">Plasma 6.8</a>. Phoronix coverage of Plasma 6.8 performance optimizations: <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-More-Performance">August 21</a> and <a href="https://www.phoronix.com/news/KDE-Plasma-6.8-Autoscroll">triple buffering</a>. 9to5Linux preview of Plasma 6.8: <a href="https://9to5linux.com/kde-plasma-6-8-desktop-environment-is-coming-on-october-14th-heres-what-to-expect">October 14 release</a>. “This Week in Plasma” blog posts covering the 6.8 development cycle: <a href="https://blogs.kde.org/2026/07/11/this-week-in-plasma-audio-recording-in-spectacle/">Audio Recording in Spectacle</a>, <a href="https://blogs.kde.org/2026/07/04/this-week-in-plasma-better-animations/">Better Animations</a>, <a href="https://blogs.kde.org/2026/08/22/this-week-in-plasma-ui-and-performance-improvements/">UI and Performance Improvements</a>, <a href="https://blogs.kde.org/2026/08/28/this-week-in-plasma-qtwidgets-apps-join-the-union/">QtWidgets Apps Join the Union</a>, <a href="https://blogs.kde.org/2026/06/27/this-week-in-plasma-post-6.7-bug-fixing/">Post-6.7 fixes</a>, and <a href="https://blogs.kde.org/2025/11/26/going-all-in-on-a-wayland-future/">Going all-in on a Wayland future</a>. New In Linux feature summary: <a href="https://www.newinlinux.com/these-are-the-most-exciting-features-in-plasma-6-8-so-far/">Plasma 6.8 features</a>.</p>
 </div><a class="backlink" href="/desktop-reports/blog/">← All posts</a></article></main><footer class="site-footer"><div class="inner footer-inner"><span></span><a class="gh-link" href="https://github.com/JustAdreamerFL/desktop-reports" aria-label="GitHub repository" title="GitHub"><svg width="20" height="20" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82a7.42 7.42 0 0 1 2-.27c.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A7.995 7.995 0 0 0 16 8c0-4.42-3.58-8-8-8Z"></path></svg></a></div></footer></body></html>
